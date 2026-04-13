@@ -28,24 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataCortes = new System.Windows.Forms.DataGridView();
-            this.label26 = new System.Windows.Forms.Label();
-            this.btnRefrescarC = new System.Windows.Forms.Button();
-            this.lblRegistrosB = new System.Windows.Forms.Label();
-            this.dtFiltro = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblNCorte = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtCierre = new System.Windows.Forms.TextBox();
+            this.txtMontoI = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtCajero = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtApertura = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -59,6 +55,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtEfectivoM = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -72,23 +69,29 @@
             this.label18 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtCierre = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtApertura = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtCajero = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtMontoI = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblNCorte = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtFiltro = new System.Windows.Forms.DateTimePicker();
+            this.lblRegistrosB = new System.Windows.Forms.Label();
+            this.btnRefrescarC = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.dataCortes = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.dtDesde = new System.Windows.Forms.DateTimePicker();
             this.dtHasta = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCortes)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -107,178 +110,111 @@
             this.panel3.Size = new System.Drawing.Size(1041, 577);
             this.panel3.TabIndex = 20;
             // 
-            // panel1
+            // groupBox4
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel1.Location = new System.Drawing.Point(0, 47);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1163, 1);
-            this.panel1.TabIndex = 21;
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.txtCierre);
+            this.groupBox4.Controls.Add(this.txtMontoI);
+            this.groupBox4.Controls.Add(this.label24);
+            this.groupBox4.Controls.Add(this.txtCajero);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.txtApertura);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.groupBox4.Location = new System.Drawing.Point(12, 274);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(305, 291);
+            this.groupBox4.TabIndex = 22;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "General";
             // 
-            // label1
+            // label23
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label1.Location = new System.Drawing.Point(266, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 21);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Desde:";
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(261, 175);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(25, 25);
+            this.label23.TabIndex = 39;
+            this.label23.Text = "L.";
             // 
-            // label2
+            // txtCierre
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label2.Location = new System.Drawing.Point(556, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 21);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "Hasta:";
+            this.txtCierre.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCierre.Location = new System.Drawing.Point(121, 118);
+            this.txtCierre.Name = "txtCierre";
+            this.txtCierre.ReadOnly = true;
+            this.txtCierre.Size = new System.Drawing.Size(165, 33);
+            this.txtCierre.TabIndex = 42;
             // 
-            // groupBox1
+            // txtMontoI
             // 
-            this.groupBox1.Controls.Add(this.dtFiltro);
-            this.groupBox1.Controls.Add(this.lblRegistrosB);
-            this.groupBox1.Controls.Add(this.btnRefrescarC);
-            this.groupBox1.Controls.Add(this.label26);
-            this.groupBox1.Controls.Add(this.dataCortes);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.groupBox1.Location = new System.Drawing.Point(12, 6);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1017, 225);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Lista de cortes";
+            this.txtMontoI.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMontoI.Location = new System.Drawing.Point(121, 166);
+            this.txtMontoI.Name = "txtMontoI";
+            this.txtMontoI.ReadOnly = true;
+            this.txtMontoI.Size = new System.Drawing.Size(134, 33);
+            this.txtMontoI.TabIndex = 38;
             // 
-            // dataCortes
+            // label24
             // 
-            this.dataCortes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataCortes.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
-            this.dataCortes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataCortes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataCortes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataCortes.Location = new System.Drawing.Point(6, 63);
-            this.dataCortes.Name = "dataCortes";
-            this.dataCortes.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataCortes.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataCortes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataCortes.Size = new System.Drawing.Size(1005, 152);
-            this.dataCortes.TabIndex = 29;
-            this.dataCortes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCortes_CellClick);
-            this.dataCortes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataCortes_CellFormatting);
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(23, 175);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(86, 17);
+            this.label24.TabIndex = 37;
+            this.label24.Text = "Monto inicial:";
             // 
-            // label26
+            // txtCajero
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(11, 31);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(59, 21);
-            this.label26.TabIndex = 35;
-            this.label26.Text = "Buscar:";
+            this.txtCajero.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCajero.Location = new System.Drawing.Point(121, 26);
+            this.txtCajero.Name = "txtCajero";
+            this.txtCajero.ReadOnly = true;
+            this.txtCajero.Size = new System.Drawing.Size(165, 33);
+            this.txtCajero.TabIndex = 38;
             // 
-            // btnRefrescarC
+            // label20
             // 
-            this.btnRefrescarC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.btnRefrescarC.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnRefrescarC.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnRefrescarC.Location = new System.Drawing.Point(295, 25);
-            this.btnRefrescarC.Name = "btnRefrescarC";
-            this.btnRefrescarC.Size = new System.Drawing.Size(153, 29);
-            this.btnRefrescarC.TabIndex = 36;
-            this.btnRefrescarC.Text = "[image] refrescar";
-            this.btnRefrescarC.UseVisualStyleBackColor = false;
-            this.btnRefrescarC.Click += new System.EventHandler(this.btnRefrescarC_Click);
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(63, 126);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(46, 17);
+            this.label20.TabIndex = 41;
+            this.label20.Text = "Cierre:";
             // 
-            // lblRegistrosB
+            // label22
             // 
-            this.lblRegistrosB.AutoSize = true;
-            this.lblRegistrosB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrosB.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblRegistrosB.Location = new System.Drawing.Point(902, 31);
-            this.lblRegistrosB.Name = "lblRegistrosB";
-            this.lblRegistrosB.Size = new System.Drawing.Size(91, 21);
-            this.lblRegistrosB.TabIndex = 37;
-            this.lblRegistrosB.Text = "Registros: 0";
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(63, 34);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(49, 17);
+            this.label22.TabIndex = 37;
+            this.label22.Text = "Cajero:";
             // 
-            // dtFiltro
+            // txtApertura
             // 
-            this.dtFiltro.Location = new System.Drawing.Point(76, 25);
-            this.dtFiltro.Name = "dtFiltro";
-            this.dtFiltro.Size = new System.Drawing.Size(200, 29);
-            this.dtFiltro.TabIndex = 38;
-            this.dtFiltro.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.txtApertura.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApertura.Location = new System.Drawing.Point(121, 71);
+            this.txtApertura.Name = "txtApertura";
+            this.txtApertura.ReadOnly = true;
+            this.txtApertura.Size = new System.Drawing.Size(165, 33);
+            this.txtApertura.TabIndex = 40;
             // 
-            // label3
+            // label21
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.label3.Location = new System.Drawing.Point(8, 240);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(290, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Detalle del corte seleccionado — Corte #";
-            // 
-            // lblNCorte
-            // 
-            this.lblNCorte.AutoSize = true;
-            this.lblNCorte.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNCorte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.lblNCorte.Location = new System.Drawing.Point(291, 240);
-            this.lblNCorte.Name = "lblNCorte";
-            this.lblNCorte.Size = new System.Drawing.Size(19, 21);
-            this.lblNCorte.TabIndex = 2;
-            this.lblNCorte.Text = "0";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel2.Location = new System.Drawing.Point(12, 264);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1017, 1);
-            this.panel2.TabIndex = 18;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.panel4);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.groupBox3.Location = new System.Drawing.Point(686, 274);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(343, 291);
-            this.groupBox3.TabIndex = 20;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Por tipo de venta";
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(48, 79);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(62, 17);
+            this.label21.TabIndex = 39;
+            this.label21.Text = "Apertura:";
             // 
             // groupBox2
             // 
@@ -303,26 +239,6 @@
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Por método de pago";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label23);
-            this.groupBox4.Controls.Add(this.txtCierre);
-            this.groupBox4.Controls.Add(this.txtMontoI);
-            this.groupBox4.Controls.Add(this.label24);
-            this.groupBox4.Controls.Add(this.txtCajero);
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.label22);
-            this.groupBox4.Controls.Add(this.txtApertura);
-            this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.groupBox4.Location = new System.Drawing.Point(12, 274);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(305, 291);
-            this.groupBox4.TabIndex = 22;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "General";
             // 
             // label12
             // 
@@ -448,6 +364,30 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "Efectivo:";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.panel4);
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.groupBox3.Location = new System.Drawing.Point(686, 274);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(343, 291);
+            this.groupBox3.TabIndex = 20;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Por tipo de venta";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -572,95 +512,158 @@
             this.label19.TabIndex = 37;
             this.label19.Text = "Membresías:";
             // 
-            // txtCierre
+            // panel2
             // 
-            this.txtCierre.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCierre.Location = new System.Drawing.Point(121, 118);
-            this.txtCierre.Name = "txtCierre";
-            this.txtCierre.ReadOnly = true;
-            this.txtCierre.Size = new System.Drawing.Size(165, 33);
-            this.txtCierre.TabIndex = 42;
+            this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel2.Location = new System.Drawing.Point(12, 264);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1017, 1);
+            this.panel2.TabIndex = 18;
             // 
-            // label20
+            // lblNCorte
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(63, 126);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(46, 17);
-            this.label20.TabIndex = 41;
-            this.label20.Text = "Cierre:";
+            this.lblNCorte.AutoSize = true;
+            this.lblNCorte.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNCorte.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.lblNCorte.Location = new System.Drawing.Point(291, 240);
+            this.lblNCorte.Name = "lblNCorte";
+            this.lblNCorte.Size = new System.Drawing.Size(19, 21);
+            this.lblNCorte.TabIndex = 2;
+            this.lblNCorte.Text = "0";
             // 
-            // txtApertura
+            // label3
             // 
-            this.txtApertura.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApertura.Location = new System.Drawing.Point(121, 71);
-            this.txtApertura.Name = "txtApertura";
-            this.txtApertura.ReadOnly = true;
-            this.txtApertura.Size = new System.Drawing.Size(165, 33);
-            this.txtApertura.TabIndex = 40;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label3.Location = new System.Drawing.Point(8, 240);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(290, 21);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Detalle del corte seleccionado — Corte #";
             // 
-            // label21
+            // groupBox1
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(48, 79);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(62, 17);
-            this.label21.TabIndex = 39;
-            this.label21.Text = "Apertura:";
+            this.groupBox1.Controls.Add(this.dtFiltro);
+            this.groupBox1.Controls.Add(this.lblRegistrosB);
+            this.groupBox1.Controls.Add(this.btnRefrescarC);
+            this.groupBox1.Controls.Add(this.label26);
+            this.groupBox1.Controls.Add(this.dataCortes);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.groupBox1.Location = new System.Drawing.Point(12, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1017, 225);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Lista de cortes";
             // 
-            // txtCajero
+            // dtFiltro
             // 
-            this.txtCajero.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCajero.Location = new System.Drawing.Point(121, 26);
-            this.txtCajero.Name = "txtCajero";
-            this.txtCajero.ReadOnly = true;
-            this.txtCajero.Size = new System.Drawing.Size(165, 33);
-            this.txtCajero.TabIndex = 38;
+            this.dtFiltro.Location = new System.Drawing.Point(76, 25);
+            this.dtFiltro.Name = "dtFiltro";
+            this.dtFiltro.Size = new System.Drawing.Size(200, 29);
+            this.dtFiltro.TabIndex = 38;
+            this.dtFiltro.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // label22
+            // lblRegistrosB
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(63, 34);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(49, 17);
-            this.label22.TabIndex = 37;
-            this.label22.Text = "Cajero:";
+            this.lblRegistrosB.AutoSize = true;
+            this.lblRegistrosB.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegistrosB.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.lblRegistrosB.Location = new System.Drawing.Point(902, 31);
+            this.lblRegistrosB.Name = "lblRegistrosB";
+            this.lblRegistrosB.Size = new System.Drawing.Size(91, 21);
+            this.lblRegistrosB.TabIndex = 37;
+            this.lblRegistrosB.Text = "Registros: 0";
             // 
-            // label23
+            // btnRefrescarC
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(261, 175);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(25, 25);
-            this.label23.TabIndex = 39;
-            this.label23.Text = "L.";
+            this.btnRefrescarC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
+            this.btnRefrescarC.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnRefrescarC.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRefrescarC.Location = new System.Drawing.Point(295, 25);
+            this.btnRefrescarC.Name = "btnRefrescarC";
+            this.btnRefrescarC.Size = new System.Drawing.Size(153, 29);
+            this.btnRefrescarC.TabIndex = 36;
+            this.btnRefrescarC.Text = "[image] refrescar";
+            this.btnRefrescarC.UseVisualStyleBackColor = false;
+            this.btnRefrescarC.Click += new System.EventHandler(this.btnRefrescarC_Click);
             // 
-            // txtMontoI
+            // label26
             // 
-            this.txtMontoI.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMontoI.Location = new System.Drawing.Point(121, 166);
-            this.txtMontoI.Name = "txtMontoI";
-            this.txtMontoI.ReadOnly = true;
-            this.txtMontoI.Size = new System.Drawing.Size(134, 33);
-            this.txtMontoI.TabIndex = 38;
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(11, 31);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(59, 21);
+            this.label26.TabIndex = 35;
+            this.label26.Text = "Buscar:";
             // 
-            // label24
+            // dataCortes
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(23, 175);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(86, 17);
-            this.label24.TabIndex = 37;
-            this.label24.Text = "Monto inicial:";
+            this.dataCortes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataCortes.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
+            this.dataCortes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataCortes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataCortes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataCortes.Location = new System.Drawing.Point(6, 63);
+            this.dataCortes.Name = "dataCortes";
+            this.dataCortes.ReadOnly = true;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataCortes.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataCortes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataCortes.Size = new System.Drawing.Size(1005, 152);
+            this.dataCortes.TabIndex = 29;
+            this.dataCortes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataCortes_CellClick);
+            this.dataCortes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataCortes_CellFormatting);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel1.Location = new System.Drawing.Point(0, 47);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1163, 1);
+            this.panel1.TabIndex = 21;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label1.Location = new System.Drawing.Point(397, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 21);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Desde:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.label2.Location = new System.Drawing.Point(687, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 21);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Hasta:";
             // 
             // dtDesde
             // 
-            this.dtDesde.Location = new System.Drawing.Point(329, 9);
+            this.dtDesde.Location = new System.Drawing.Point(460, 12);
             this.dtDesde.Name = "dtDesde";
             this.dtDesde.Size = new System.Drawing.Size(200, 20);
             this.dtDesde.TabIndex = 39;
@@ -668,17 +671,54 @@
             // 
             // dtHasta
             // 
-            this.dtHasta.Location = new System.Drawing.Point(616, 9);
+            this.dtHasta.Location = new System.Drawing.Point(747, 12);
             this.dtHasta.Name = "dtHasta";
             this.dtHasta.Size = new System.Drawing.Size(200, 20);
             this.dtHasta.TabIndex = 40;
             this.dtHasta.ValueChanged += new System.EventHandler(this.dtHasta_ValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(191, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 29);
+            this.button1.TabIndex = 39;
+            this.button1.Text = "crear corte";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel5.Location = new System.Drawing.Point(368, 10);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(1, 29);
+            this.panel5.TabIndex = 41;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(18, 8);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 29);
+            this.button2.TabIndex = 42;
+            this.button2.Text = "actual corte";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FmrCorteMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1041, 625);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dtHasta);
             this.Controls.Add(this.dtDesde);
             this.Controls.Add(this.label2);
@@ -689,15 +729,15 @@
             this.Text = "FmrCorteMain";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataCortes)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -758,5 +798,8 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.DateTimePicker dtDesde;
         private System.Windows.Forms.DateTimePicker dtHasta;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button button2;
     }
 }

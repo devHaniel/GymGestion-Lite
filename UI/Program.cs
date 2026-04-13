@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Cortes;
+using UI.Login;
+using UI.Proveedores;
 
 namespace UI
 {
@@ -18,21 +20,13 @@ namespace UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FmrCorteMain());
+            //var login = new FmrLogin();
 
-            //var corteService = new CorteService();
-
-            //if (!corteService.HayCorteAbierto())
+            //if (login.ShowDialog() == DialogResult.OK)
             //{
-            //    Application.Run(new FmrCorteAbrir());
-
+            //    Application.Run(new FmrMain() { Usuario = login.Usuario });
             //}
-
-            //if (corteService.HayCorteAbierto())
-            //{
-            //    Application.Run(new FmrCorte());
-
-            //}
+            Application.Run(new FmrProveedores());
         }
     }
 }

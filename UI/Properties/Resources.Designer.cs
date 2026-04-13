@@ -63,6 +63,26 @@ namespace UI.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mancuernas {
+            get {
+                object obj = ResourceManager.GetObject("mancuernas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mancuernas__1_ {
+            get {
+                object obj = ResourceManager.GetObject("mancuernas (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap refrescar {
             get {
                 object obj = ResourceManager.GetObject("refrescar", resourceCulture);

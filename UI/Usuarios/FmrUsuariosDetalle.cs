@@ -147,6 +147,14 @@ namespace UI.Usuarios
             var password = Encriptacion.HashSHA256(txtContra.Text);
             var activo = cmbActivo.Checked;
 
+            var emailEncontrado = _usuarioService.ObtenerPorEmail(email);
+
+            if(emailEncontrado != null)
+            {
+                MessageBox.Show("Correo ya ocupado.");
+                return;
+            }
+
             Usuario usuario = new Usuario()
             {
                 Nombre = nombre,

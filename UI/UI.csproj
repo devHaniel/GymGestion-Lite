@@ -117,6 +117,24 @@
     <Compile Include="FmrMain.Designer.cs">
       <DependentUpon>FmrMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\FmrLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\FmrLogin.Designer.cs">
+      <DependentUpon>FmrLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores\FmrProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\FmrProveedores.Designer.cs">
+      <DependentUpon>FmrProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores\FmrProveedoresDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\FmrProveedoresDetalle.Designer.cs">
+      <DependentUpon>FmrProveedoresDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios\FmrUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +160,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FmrMain.resx">
       <DependentUpon>FmrMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\FmrLogin.resx">
+      <DependentUpon>FmrLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\FmrProveedores.resx">
+      <DependentUpon>FmrProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\FmrProveedoresDetalle.resx">
+      <DependentUpon>FmrProveedoresDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\FmrUsuarios.resx">
       <DependentUpon>FmrUsuarios.cs</DependentUpon>
@@ -185,6 +212,12 @@
       <Project>{E4F6D182-49D9-4E7E-88B0-5909454DD491}</Project>
       <Name>Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mancuernas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mancuernas %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

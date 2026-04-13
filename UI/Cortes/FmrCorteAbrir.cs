@@ -33,7 +33,7 @@ namespace UI.Cortes
                 var corte = new Corte() 
                 { 
                     //UsuarioId = Usuario.Id,
-                    Usuario_Id = 5,
+                    Usuario_Id = Usuario.Id,
                     Fecha_Apertura = fecha,
                     Monto_Inicial = monto
                 };
@@ -43,8 +43,6 @@ namespace UI.Cortes
                 {
                     MessageBox.Show("Corte abierto correctamente.");
                     this.Close();
-                    FmrMain main = new FmrMain();
-                    main.Show();
                 }
                 else
                 {

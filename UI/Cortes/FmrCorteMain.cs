@@ -15,6 +15,7 @@ namespace UI.Cortes
     public partial class FmrCorteMain : Form
     {
         private readonly CorteService _corteService;
+        public Usuario Usuario {  get; set; }
         public FmrCorteMain()
         {
             InitializeComponent();
@@ -235,6 +236,21 @@ namespace UI.Cortes
                         e.CellStyle.Font = new Font(dataCortes.Font, FontStyle.Bold);
                     }
                 }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FmrCorteAbrir fmrCorteAbrir = new FmrCorteAbrir() { Usuario = this.Usuario};
+            fmrCorteAbrir.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(_corteService.HayCorteAbierto())
+            {
+                FmrCorte fmrCorte = new FmrCorte();
+                fmrCorte.ShowDialog();
             }
         }
     }

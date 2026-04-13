@@ -24,21 +24,21 @@ namespace UI.Cortes
             InitializeComponent();
             _corteService = new CorteService();
 
-            if(!_corteService.HayCorteAbierto())
-            {
-                FmrCorteAbrir corteAbrir = new FmrCorteAbrir();
-                corteAbrir.Show();
-                this.Close();
-                return;
-            }
-            _corteActual = _corteService.ObtenerActivo();
             _compraService = new CompraService();
             _ventaService = new VentaService();
-            CargarTarjetas();
-            CargarTxTResumen();
-            cmbTipoV.SelectedIndex = 0;
+            validacion();
         }
 
+        private void validacion()
+        {
+            if (_corteService.HayCorteAbierto())
+            {
+                _corteActual = _corteService.ObtenerActivo();
+                CargarTarjetas();
+                CargarTxTResumen();
+                cmbTipoV.SelectedIndex = 0;
+            }
+        }
         private void CargarTarjetas()
         {
             lblTotalVentas.Text = $"L. {_corteActual.Ventas_Acumuladas:N2}";
@@ -84,6 +84,8 @@ namespace UI.Cortes
                     Observaciones = txtObservaciones?.Text ?? string.Empty
                 };
                 _corteService.Cerrar(corte);
+                MessageBox.Show("Corte cerrado. Feliz dia :)");
+                this.Close();
             }
         }
         
@@ -92,29 +94,32 @@ namespace UI.Cortes
         {
             int index = tabControl1.SelectedIndex;
 
-            if(index < 0)
+            if (_corteService.HayCorteAbierto())
             {
-                return;
-            }
-            if(index == 0)
-            {
-                CargarTxTResumen();
-                CargarTarjetas();
-                LimpiarCompras();
-                LimpiarVentas();
-            }
-            if(index == 1)
-            {
-                CargarTarjetas();
-                CargarVentas();
-                LimpiarCompras();
-            }
-            if(index == 2)
+                if (index < 0)
+                {
+                    return;
+                }
+                if(index == 0)
+                {
+                    CargarTxTResumen();
+                    CargarTarjetas();
+                    LimpiarCompras();
+                    LimpiarVentas();
+                }
+                if(index == 1)
+                {
+                    CargarTarjetas();
+                    CargarVentas();
+                    LimpiarCompras();
+                }
+                if(index == 2)
 
-            {
-                CargarTarjetas();
-                CargarCompras();
-                LimpiarVentas();
+                {
+                    CargarTarjetas();
+                    CargarCompras();
+                    LimpiarVentas();
+                }
             }
         }
 
@@ -122,9 +127,12 @@ namespace UI.Cortes
         #region 
         private void CargarVentas()
         {
-            CargarDataVentas();
-            lblRegistroV.Text = $"Registros: {_ventaService.ObtenerPorCorte(_corteActual.Corte_Id).Count.ToString()}";
-            txtTotalV.Text = $"L. {_corteActual.Ventas_Acumuladas:N2}";
+            if (_corteService.HayCorteAbierto())
+            {
+                CargarDataVentas();
+                lblRegistroV.Text = $"Registros: {_ventaService.ObtenerPorCorte(_corteActual.Corte_Id).Count.ToString()}";
+                txtTotalV.Text = $"L. {_corteActual.Ventas_Acumuladas:N2}";
+            }
         }
 
         private void LimpiarVentas()
@@ -134,77 +142,83 @@ namespace UI.Cortes
 
         private void CargarDataVentas()
         {
-            if (txtBuscarV.Text.Length > 0)
+            if (_corteService.HayCorteAbierto())
             {
+                if (txtBuscarV.Text.Length > 0)
+                {
 
-                var ventasFiltro = _ventaService.ObtenerPorCorte(_corteActual.Corte_Id)
-                    .Where(v => v.Concepto.ToLower().Contains(txtBuscarV.Text.ToLower()))
-                    .Select(v => new
-                    {
-                        v.Usuario,
-                        v.Cliente,
-                        v.Tipo_Venta,
-                        v.Concepto,
-                        v.Subtotal,
-                        v.Fecha,
+                    var ventasFiltro = _ventaService.ObtenerPorCorte(_corteActual.Corte_Id)
+                        .Where(v => v.Concepto.ToLower().Contains(txtBuscarV.Text.ToLower()))
+                        .Select(v => new
+                        {
+                            v.Usuario,
+                            v.Cliente,
+                            v.Tipo_Venta,
+                            v.Concepto,
+                            v.Subtotal,
+                            v.Fecha,
 
-                    })
-                    .ToList();
-                dataVentas.DataSource = ventasFiltro;
-                lblRegistroV.Text = $"Registros: {ventasFiltro.Count}";
+                        })
+                        .ToList();
+                    dataVentas.DataSource = ventasFiltro;
+                    lblRegistroV.Text = $"Registros: {ventasFiltro.Count}";
 
-            }
-            else
-            {
-                var ventasFiltro = _ventaService.ObtenerPorCorte(_corteActual.Corte_Id)
-                    .Select(v => new
-                    {
-                        v.Usuario,
-                        v.Cliente,
-                        v.Tipo_Venta,
-                        v.Concepto,
-                        v.Subtotal,
-                        v.Fecha,
+                }
+                else
+                {
+                    var ventasFiltro = _ventaService.ObtenerPorCorte(_corteActual.Corte_Id)
+                        .Select(v => new
+                        {
+                            v.Usuario,
+                            v.Cliente,
+                            v.Tipo_Venta,
+                            v.Concepto,
+                            v.Subtotal,
+                            v.Fecha,
 
-                    })
-                    .ToList();
-                dataVentas.DataSource = ventasFiltro;
-                lblRegistroV.Text = $"Registros: {ventasFiltro.Count}";
+                        })
+                        .ToList();
+                    dataVentas.DataSource = ventasFiltro;
+                    lblRegistroV.Text = $"Registros: {ventasFiltro.Count}";
 
+                }
             }
         }
         private void FiltrarVentas()
         {
-            var indice = cmbTipoV.SelectedIndex;
-            var categoria = cmbTipoV.Text;
-            var texto = txtBuscarV.Text;
-            // 0 - Todos
-            // 1 - Membresías
-            // 2 - Producto
-            // 3 - Mixtas
-            if (indice == 0)
+            if (_corteService.HayCorteAbierto())
             {
-                CargarDataVentas();
-            }
-            if (indice > 0)
-            {
-                var ventasFiltro = _ventaService.ObtenerPorCorte(_corteActual.Corte_Id)
-                    .Where(v => v.Concepto.ToLower().Contains(texto.ToLower())
-                              && v.Tipo_Venta.ToLower().Equals(categoria.ToLower()))
-                    .Select(v => new
-                    {
-                        v.Usuario,
-                        v.Cliente,
-                        v.Tipo_Venta,
-                        v.Concepto,
-                        v.Subtotal,
-                        v.Fecha,
+                var indice = cmbTipoV.SelectedIndex;
+                var categoria = cmbTipoV.Text;
+                var texto = txtBuscarV.Text;
+                // 0 - Todos
+                // 1 - Membresías
+                // 2 - Producto
+                // 3 - Mixtas
+                if (indice == 0)
+                {
+                    CargarDataVentas();
+                }
+                if (indice > 0)
+                {
+                    var ventasFiltro = _ventaService.ObtenerPorCorte(_corteActual.Corte_Id)
+                        .Where(v => v.Concepto.ToLower().Contains(texto.ToLower())
+                                  && v.Tipo_Venta.ToLower().Equals(categoria.ToLower()))
+                        .Select(v => new
+                        {
+                            v.Usuario,
+                            v.Cliente,
+                            v.Tipo_Venta,
+                            v.Concepto,
+                            v.Subtotal,
+                            v.Fecha,
 
-                    })
-                    .ToList();
-                dataVentas.DataSource = ventasFiltro;
-                lblRegistroV.Text = $"Registros: {ventasFiltro.Count}";
+                        })
+                        .ToList();
+                    dataVentas.DataSource = ventasFiltro;
+                    lblRegistroV.Text = $"Registros: {ventasFiltro.Count}";
 
+                }
             }
         }
 
@@ -231,11 +245,14 @@ namespace UI.Cortes
         #region
         private void CargarCompras()
         {
-            CargarDataCompras();
-            CargarCmb();
-            cmbTipoC.SelectedIndex = 0;
-            lblRegistrosB.Text = $"Registros: {_compraService.ObtenerPorCorte(_corteActual.Corte_Id).Count.ToString()}";
-            txtTotalC.Text = $"L. {_corteActual.Total_Compras:N2}";
+            if (_corteService.HayCorteAbierto())
+            {
+                CargarDataCompras();
+                CargarCmb();
+                cmbTipoC.SelectedIndex = 0;
+                lblRegistrosB.Text = $"Registros: {_compraService.ObtenerPorCorte(_corteActual.Corte_Id).Count.ToString()}";
+                txtTotalC.Text = $"L. {_corteActual.Total_Compras:N2}";
+            }
         }
 
         private void CargarCmb()
@@ -296,36 +313,40 @@ namespace UI.Cortes
 
         private void FiltrarCompras()
         {
-            var indice = cmbTipoC.SelectedIndex;
-            var categoria = cmbTipoC.Text;
-            var texto = txtBuscarC.Text;
-            // 0 - Todos
-            // 1 - Membresías
-            // 2 - Producto
-            // 3 - Mixtas
-            if (indice == 0)
+            if (_corteService.HayCorteAbierto())
             {
-                CargarDataCompras();
-            }
-            if (indice > 0)
-            {
-                var comprasFiltro = _compraService.ObtenerPorCorte(_corteActual.Corte_Id)
-                    .Where(v => v.Producto.ToLower().Contains(texto.ToLower())
-                              && v.Categoria.ToLower().Equals(categoria.ToLower()))
-                    .Select(v => new
-                    {
-                        v.Usuario,
-                        v.Proveedor,
-                        v.Producto,
-                        v.Categoria,
-                        v.Subtotal,
-                        v.Fecha,
 
-                    })
-                    .ToList();
-                dataCompra.DataSource = comprasFiltro;
-                lblRegistrosB.Text = $"Registros: {comprasFiltro.Count}";
+                var indice = cmbTipoC.SelectedIndex;
+                var categoria = cmbTipoC.Text;
+                var texto = txtBuscarC.Text;
+                // 0 - Todos
+                // 1 - Membresías
+                // 2 - Producto
+                // 3 - Mixtas
+                if (indice == 0)
+                {
+                    CargarDataCompras();
+                }
+                if (indice > 0)
+                {
+                    var comprasFiltro = _compraService.ObtenerPorCorte(_corteActual.Corte_Id)
+                        .Where(v => v.Producto.ToLower().Contains(texto.ToLower())
+                                  && v.Categoria.ToLower().Equals(categoria.ToLower()))
+                        .Select(v => new
+                        {
+                            v.Usuario,
+                            v.Proveedor,
+                            v.Producto,
+                            v.Categoria,
+                            v.Subtotal,
+                            v.Fecha,
 
+                        })
+                        .ToList();
+                    dataCompra.DataSource = comprasFiltro;
+                    lblRegistrosB.Text = $"Registros: {comprasFiltro.Count}";
+
+                }
             }
         }
 

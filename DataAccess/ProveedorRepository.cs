@@ -14,7 +14,7 @@ namespace Gimnasio.DataAccess
             using (var con = new SqlConnection(Conexion.ConnectionString))
             {
                 return con.Query<Proveedor>(
-                    "SELECT * FROM PROVEEDORES ORDER BY Nombre"
+                    "SELECT * FROM PROVEEDORES ORDER BY id desc"
                 ).ToList();
             }
         }
