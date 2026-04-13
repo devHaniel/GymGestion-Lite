@@ -102,6 +102,8 @@ namespace UI
         private void button1_Click(object sender, EventArgs e)
         {
             MostrarUsuarios();
+            comboBox1.SelectedIndex = 0;
+            textBox1.Text = "";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

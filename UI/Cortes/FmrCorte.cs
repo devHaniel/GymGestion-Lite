@@ -1,4 +1,5 @@
 ﻿using BusinessLogic;
+using Gimnasio.BusinessLogic;
 using Gimnasio.Entities;
 using Gimnasio.Entities.ViewModels;
 using System;
@@ -257,15 +258,13 @@ namespace UI.Cortes
 
         private void CargarCmb()
         {
+            var categorias = new CategoriaService();
             var products = new ProductoService();
             cmbTipoC.DataSource = null;
-            var categorias = products.ObtenerTodos()
-                .Select(p => p.Categoria)
-                .Where(c => !string.IsNullOrEmpty(c))
-                .Distinct()
-                .ToList();
 
-            categorias.Insert(0, "Todos");
+            var nombres = categorias.ObtenerTodos().Select(c =>  c.Nombre ).Distinct().ToList();
+
+            nombres.Insert(0, "Todos");
             cmbTipoC.DataSource = categorias;
 
         }

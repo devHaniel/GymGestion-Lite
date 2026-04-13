@@ -85,6 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Compra.cs" />
     <Compile Include="Corte.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="VistaModelos\CompraDetalleVM.cs" />
     <Compile Include="VistaModelos\CorteActivoVM.cs" />
     <Compile Include="VistaModelos\MembresiaActivaVM.cs" />
+    <Compile Include="VistaModelos\ProductoVM.cs" />
     <Compile Include="VistaModelos\StockBajoVM.cs" />
     <Compile Include="VistaModelos\VentaDetalleVM.cs" />
   </ItemGroup>

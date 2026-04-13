@@ -4,13 +4,13 @@ namespace Gimnasio.Entities
     {
         public int     Id           { get; set; }
         public string  Nombre       { get; set; } = string.Empty;
-        public string Categoria    { get; set; }
-        public decimal PrecioVenta  { get; set; }
-        public decimal PrecioCosto  { get; set; }
-        public int     StockActual  { get; set; }
-        public int     StockMinimo  { get; set; }
+        public int Categoria_Id    { get; set; }
+        public decimal Precio_Venta  { get; set; }
+        public decimal Precio_Costo  { get; set; }
+        public int     Stock_Actual  { get; set; }
+        public int     Stock_Minimo  { get; set; }
         public bool    Activo       { get; set; } = true;
 
-        public bool StockBajo => StockActual <= StockMinimo;
+        public bool StockBajo => Stock_Actual <= Stock_Minimo;
     }
 }

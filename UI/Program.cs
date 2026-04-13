@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Cortes;
 using UI.Login;
+using UI.Productos;
 using UI.Proveedores;
 
 namespace UI
@@ -26,7 +27,7 @@ namespace UI
             //{
             //    Application.Run(new FmrMain() { Usuario = login.Usuario });
             //}
-            Application.Run(new FmrProveedores());
+            Application.Run(new FmrProductos());
         }
     }
 }

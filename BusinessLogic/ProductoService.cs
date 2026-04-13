@@ -1,4 +1,5 @@
 ﻿using DataAccess;
+using Entities.VistaModelos;
 using Gimnasio.DataAccess;
 using Gimnasio.Entities;
 using Gimnasio.Entities.ViewModels;
@@ -20,12 +21,12 @@ namespace BusinessLogic
             _productoRepository = new ProductoRepository();
         }
 
-        public List<Producto> ObtenerTodos()
+        public List<ProductoVM> ObtenerTodos()
         {
             return _productoRepository.ObtenerTodos();
         }
 
-        public Producto ObtenerPorId(int id)
+        public ProductoVM ObtenerPorId(int id)
         {
             return _productoRepository.ObtenerPorId(id);
         }

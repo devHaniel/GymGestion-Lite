@@ -26,7 +26,7 @@ namespace UI.Proveedores
 
         public void MostrarProveedores(List<Proveedor> proveedores)
         {
-            dataProveedores.DataSource = proveedores;
+            dataProductos.DataSource = proveedores;
             AgregarColumnaDetalles();
             AgregarColumnaActualizar();
             AgregarColumnaEliminar();
@@ -35,7 +35,7 @@ namespace UI.Proveedores
 
         public void AgregarColumnaEliminar()
         {
-            if (dataProveedores.Columns.Contains("btnEliminar")) return;
+            if (dataProductos.Columns.Contains("btnEliminar")) return;
 
             DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
             btnEliminar.Name = "btnEliminar";
@@ -45,12 +45,12 @@ namespace UI.Proveedores
             btnEliminar.DefaultCellStyle.BackColor = Color.IndianRed;
             btnEliminar.DefaultCellStyle.ForeColor = Color.White;
 
-            dataProveedores.Columns.Add(btnEliminar);
+            dataProductos.Columns.Add(btnEliminar);
         }
 
         public void AgregarColumnaDetalles()
         {
-            if (dataProveedores.Columns.Contains("btnDetalles")) return;
+            if (dataProductos.Columns.Contains("btnDetalles")) return;
 
             DataGridViewButtonColumn btnDetalles = new DataGridViewButtonColumn();
             btnDetalles.Name = "btnDetalles";
@@ -60,12 +60,12 @@ namespace UI.Proveedores
             btnDetalles.DefaultCellStyle.BackColor = Color.IndianRed;
             btnDetalles.DefaultCellStyle.ForeColor = Color.White;
 
-            dataProveedores.Columns.Add(btnDetalles);
+            dataProductos.Columns.Add(btnDetalles);
         }
 
         private void AgregarColumnaActualizar()
         {
-            if (dataProveedores.Columns.Contains("btnActualizar")) return;
+            if (dataProductos.Columns.Contains("btnActualizar")) return;
 
             DataGridViewButtonColumn btnActualizar = new DataGridViewButtonColumn();
             btnActualizar.Name = "btnActualizar";
@@ -75,7 +75,7 @@ namespace UI.Proveedores
             btnActualizar.DefaultCellStyle.BackColor = Color.IndianRed;
             btnActualizar.DefaultCellStyle.ForeColor = Color.White;
 
-            dataProveedores.Columns.Add(btnActualizar);
+            dataProductos.Columns.Add(btnActualizar);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -87,6 +87,7 @@ namespace UI.Proveedores
         private void button1_Click(object sender, EventArgs e)
         {
             MostrarProveedores(_proveedorService.ObtenerTodos());
+            txtBuscar.Clear();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -106,19 +107,19 @@ namespace UI.Proveedores
             if (e.RowIndex < 0) return;
 
             int index = e.RowIndex;
-            var id = Convert.ToInt32(dataProveedores.Rows[index].Cells["Id"].Value);
+            var id = Convert.ToInt32(dataProductos.Rows[index].Cells["Id"].Value);
 
-            if (dataProveedores.Columns[e.ColumnIndex].Name == "btnActualizar")
+            if (dataProductos.Columns[e.ColumnIndex].Name == "btnActualizar")
             {
                 FmrProveedoresDetalle fmrProveedoresDetalle = new FmrProveedoresDetalle(this) { Editar = true, IdProveedor = id };
                 fmrProveedoresDetalle.Modo();
                 fmrProveedoresDetalle.ShowDialog();
             }
-            else if (dataProveedores.Columns[e.ColumnIndex].Name == "btnEliminar")
+            else if (dataProductos.Columns[e.ColumnIndex].Name == "btnEliminar")
             {
                 EliminarProveedor(id);
             }
-            else if (dataProveedores.Columns[e.ColumnIndex].Name == "btnDetalles")
+            else if (dataProductos.Columns[e.ColumnIndex].Name == "btnDetalles")
             {
                 FmrProveedoresDetalle fmrProveedoresDetalle = new FmrProveedoresDetalle(this) { Detalles = true, IdProveedor = id };
                 fmrProveedoresDetalle.Modo();

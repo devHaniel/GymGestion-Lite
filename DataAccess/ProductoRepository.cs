@@ -5,27 +5,28 @@ using Gimnasio.Entities.ViewModels;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 using System.Linq;
+using Entities.VistaModelos;
 
 namespace Gimnasio.DataAccess
 {
     public class ProductoRepository
     {
-        public List<Producto> ObtenerTodos()
+        public List<ProductoVM> ObtenerTodos()
         {
             using (var con = new SqlConnection(Conexion.ConnectionString))
             {
-                return con.Query<Producto>(
-                    "SELECT * FROM PRODUCTOS WHERE Activo = 1 ORDER BY Categoria, Nombre"
+                return con.Query<ProductoVM>(
+                    "SELECT * FROM [VW_PRODUCTOS] WHERE Activo = 1 ORDER BY  Nombre"
                 ).ToList();
             }
         }
 
-        public Producto ObtenerPorId(int id)
+        public ProductoVM ObtenerPorId(int id)
         {
             using (var con = new SqlConnection(Conexion.ConnectionString))
             {
-                return con.QueryFirstOrDefault<Producto>(
-                    "SELECT * FROM PRODUCTOS WHERE Id = @Id", new { Id = id }
+                return con.QueryFirstOrDefault<ProductoVM>(
+                    "SELECT * FROM [VW_PRODUCTOS] WHERE Id = @Id", new { Id = id }
                 );
             }
         }
@@ -46,9 +47,9 @@ namespace Gimnasio.DataAccess
             {
                 return con.ExecuteScalar<int>(
                     @"INSERT INTO PRODUCTOS
-                        (Nombre, Categoria, PrecioVenta, PrecioCosto, StockActual, StockMinimo, Activo)
+                        (Nombre, Categoria_id, Precio_Venta, Precio_Costo, Stock_Actual, Stock_Minimo, Activo)
                       VALUES
-                        (@Nombre, @Categoria, @PrecioVenta, @PrecioCosto, @StockActual, @StockMinimo, @Activo);
+                        (@Nombre, @Categoria_id, @Precio_Venta, @Precio_Costo, @Stock_Actual, @Stock_Minimo, @Activo);
                       SELECT SCOPE_IDENTITY();",
                     producto
                 );
@@ -62,10 +63,10 @@ namespace Gimnasio.DataAccess
                 int filas = con.Execute(
                     @"UPDATE PRODUCTOS SET
                         Nombre      = @Nombre,
-                        Categoria   = @Categoria,
-                        PrecioVenta = @PrecioVenta,
-                        PrecioCosto = @PrecioCosto,
-                        StockMinimo = @StockMinimo
+                        Categoria_id   = @Categoria_id,
+                        Precio_Venta = @Precio_Venta,
+                        Precio_Costo = @Precio_Costo,
+                        Stock_Minimo = @Stock_Minimo
                       WHERE Id = @Id",
                     producto
                 );
@@ -78,7 +79,7 @@ namespace Gimnasio.DataAccess
             using (var con = new SqlConnection(Conexion.ConnectionString))
             {
                 int filas = con.Execute(
-                    "UPDATE PRODUCTOS SET StockActual = @Stock WHERE Id = @Id",
+                    "UPDATE PRODUCTOS SET Stock_Minimo = @Stock WHERE Id = @Id",
                     new { Id = id, Stock = nuevoStock }
                 );
                 return filas > 0;
