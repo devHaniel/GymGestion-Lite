@@ -141,6 +141,12 @@
     <Compile Include="Productos\FmrProductos.Designer.cs">
       <DependentUpon>FmrProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\FmrProductosDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FmrProductosDetalles.Designer.cs">
+      <DependentUpon>FmrProductosDetalles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedores\FmrProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\FmrProductos.resx">
       <DependentUpon>FmrProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FmrProductosDetalles.resx">
+      <DependentUpon>FmrProductosDetalles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\FmrProveedores.resx">
       <DependentUpon>FmrProveedores.cs</DependentUpon>

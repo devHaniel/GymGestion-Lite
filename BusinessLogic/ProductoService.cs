@@ -55,5 +55,9 @@ namespace BusinessLogic
         {
             return _productoRepository.Eliminar(id);
         }
+        public bool Activar(int id)
+        {
+            return _productoRepository.Activar(id);
+        }
     }
 }

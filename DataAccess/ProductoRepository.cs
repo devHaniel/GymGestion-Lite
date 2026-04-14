@@ -97,5 +97,17 @@ namespace Gimnasio.DataAccess
                 return filas > 0;
             }
         }
+
+        public bool Activar(int id)
+        {
+            using (var con = new SqlConnection(Conexion.ConnectionString))
+            {
+                int filas = con.Execute(
+                    "UPDATE PRODUCTOS SET Activo = 1 WHERE Id = @Id",
+                    new { Id = id }
+                );
+                return filas > 0;
+            }
+        }
     }
 }
