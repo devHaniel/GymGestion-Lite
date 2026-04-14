@@ -1,4 +1,4 @@
-# SIS_GYM
+# GYMGESTION
 
 Sistema de gestión para gimnasio desarrollado en **C# WinForms (.NET 8)** con arquitectura de 3 capas y SQL Server como motor de base de datos.
 
