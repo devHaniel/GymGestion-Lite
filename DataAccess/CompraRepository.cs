@@ -2,7 +2,6 @@ using Dapper;
 using DataAccess;
 using Gimnasio.Entities;
 using Gimnasio.Entities.ViewModels;
-using System.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 
