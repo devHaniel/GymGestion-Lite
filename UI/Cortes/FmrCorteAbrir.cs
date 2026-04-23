@@ -16,12 +16,13 @@ namespace UI.Cortes
     {
         private readonly CorteService _corteService;
         public Usuario Usuario { get; set; } 
-        public FmrCorteAbrir()
+        public FmrCorteAbrir(Usuario usuario)
         {
             InitializeComponent();
+            this.Usuario = usuario;
             _corteService = new CorteService();
             txtFechaApertura.Text = DateTime.Now.ToString("g");
-            txtUsuario.Text = "Haniel";
+            txtUsuario.Text = Usuario.Nombre;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,6 +50,11 @@ namespace UI.Cortes
                     MessageBox.Show("No fue posible abrir el corte.");
                 }
             }
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidacionesUI.ValidacionesUI.SoloNumerosConDecimal(e, (TextBox)sender);
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Gimnasio.Entities
         public string  Email           { get; set; }
         public string  Telefono        { get; set; }
         public string  Documento       { get; set; }
-        public DateTime? FechaNacimiento { get; set; }
+        public DateTime? Fecha_Nacimiento { get; set; }
         public bool     Activo          { get; set; } = true;
         public DateTime CreatedAt       { get; set; } = DateTime.Now;
 

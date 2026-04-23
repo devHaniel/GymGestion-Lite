@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI.Proveedores;
+using UI.ValidacionesUI;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace UI.Productos
 {
@@ -145,6 +147,11 @@ namespace UI.Productos
             {
 
                 var nombre = txtNombre.Text;
+                if(string.IsNullOrEmpty(nombre))
+                {
+                    MessageBox.Show("Necesita un nombre.");
+                    return;
+                }
                 var precio_venta = Convert.ToDecimal(txtPrecioVenta.Text);
                 var precio_compra = Convert.ToDecimal(txtPrecioCompra.Text);
                 var stock_actual =  Convert.ToInt16(txtStockActual.Value);
@@ -181,6 +188,42 @@ namespace UI.Productos
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidacionesUI.ValidacionesUI.SoloNumerosConDecimal(e, (TextBox)sender);
+        }
+
+        private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidacionesUI.ValidacionesUI.SoloNumerosConDecimal(e, (TextBox)sender);
+
+        }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var categoria = cmbCategoria.Text;
+            var encotrado = _categoriaService.ObtenerTodos().Find(c => c.Nombre.Contains(categoria));
+            IdCategoria = encotrado.Id;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            txtPrecioVenta.Clear();
+            txtPrecioCompra.Clear();
+
+            txtStockActual.Value = 0;
+            txtStockMin.Value = 0;
+
+            // Si usas ComboBox para categoría
+            cmbCategoria.SelectedIndex = 0; // o 0 si quieres uno por defecto
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

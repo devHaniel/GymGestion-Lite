@@ -35,9 +35,9 @@ namespace Gimnasio.DataAccess
             {
                 return con.ExecuteScalar<int>(
                     @"INSERT INTO PLANES_MEMBRESIA
-                        (Nombre, Descripcion, Precio, DuracionDias, Activo)
+                        (Nombre, Descripcion, Precio, Duracion_Dias, Activo)
                       VALUES
-                        (@Nombre, @Descripcion, @Precio, @DuracionDias, @Activo);
+                        (@Nombre, @Descripcion, @Precio, @Duracion_Dias, @Activo);
                       SELECT SCOPE_IDENTITY();",
                     plan
                 );
@@ -53,7 +53,7 @@ namespace Gimnasio.DataAccess
                         Nombre       = @Nombre,
                         Descripcion  = @Descripcion,
                         Precio       = @Precio,
-                        DuracionDias = @DuracionDias
+                        Duracion_Dias = @Duracion_Dias
                       WHERE Id = @Id",
                     plan
                 );

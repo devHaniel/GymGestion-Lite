@@ -18,7 +18,7 @@ namespace Gimnasio.Entities.ViewModels
         public DateTime Fecha_Corte   { get; set; }
         public int? Producto_Id { get; set; }  // NULL si es membresía
         public string Concepto { get; set; } = string.Empty; // nombre producto o plan
-        public string LineaTipo { get; set; } = string.Empty; // "producto" | "membresia"
+        public string Linea_Tipo { get; set; } = string.Empty; // "producto" | "membresia"
         public string   Categoria    { get; set; }
         public int      Cantidad     { get; set; }
         public decimal  Precio_Unitario { get; set; }

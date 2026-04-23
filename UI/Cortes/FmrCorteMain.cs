@@ -16,11 +16,11 @@ namespace UI.Cortes
     {
         private readonly CorteService _corteService;
         public Usuario Usuario {  get; set; }
-        public FmrCorteMain()
+        public FmrCorteMain(Usuario usuario)
         {
             InitializeComponent();
+            this.Usuario = usuario;
             _corteService = new CorteService();
-
             CargarCortes();
         }
 
@@ -94,12 +94,17 @@ namespace UI.Cortes
             txtApertura.Text = corte.Fecha_Apertura.ToString();
             txtCierre.Text = corte.Fecha_Cierre.ToString();
             txtMontoI.Text = corte.Monto_Inicial.ToString();
+            txtTotalC.Text = corte.Total_Compras.ToString();
+            txtGTotal.Text = corte.Gran_Total.ToString();
 
             // métodos de pago
             txtEfectivoM.Text = corte.Total_Efectivo.ToString();
             txtTarjetaM.Text = corte.Total_Tarjeta.ToString();
             txtTransferenciaM.Text = corte.Total_Transferencia.ToString();
             txtTotalM.Text = corte.Total_Ventas.ToString();
+
+            txtMembresia.Text = corte.Total_Membresias.ToString();
+            txtProducto.Text = corte.Total_Productos.ToString();
         }
 
         private void dataCortes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -176,7 +181,6 @@ namespace UI.Cortes
             var col = dataCortes.Columns[e.ColumnIndex];
             var row = dataCortes.Rows[e.RowIndex];
 
-            // 🟢 VENTAS (siempre verde)
             if (col.DataPropertyName == "Total_Ventas")
             {
                 if (e.Value != null && decimal.TryParse(e.Value.ToString(), out decimal ventas))
@@ -186,7 +190,6 @@ namespace UI.Cortes
                 }
             }
 
-            // 🔴 COMPRAS (siempre rojo)
             if (col.DataPropertyName == "Total_Compras")
             {
                 if (e.Value != null && decimal.TryParse(e.Value.ToString(), out decimal compras))
@@ -196,7 +199,6 @@ namespace UI.Cortes
                 }
             }
 
-            // 📊 GRAN_TOTAL (ganancia o pérdida del día)
             if (col.DataPropertyName == "Gran_Total")
             {
                 if (e.Value != null && decimal.TryParse(e.Value.ToString(), out decimal total))
@@ -241,8 +243,16 @@ namespace UI.Cortes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FmrCorteAbrir fmrCorteAbrir = new FmrCorteAbrir() { Usuario = this.Usuario};
-            fmrCorteAbrir.ShowDialog();
+            if(_corteService.HayCorteAbierto())
+            {
+                MessageBox.Show("Ya existe un corte abierto. Cierralo para abrir otro.");
+                return;
+            }
+            if (Usuario != null)
+            {
+                FmrCorteAbrir fmrCorteAbrir = new FmrCorteAbrir(this.Usuario);
+                fmrCorteAbrir.ShowDialog();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -31,29 +31,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button4 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmrProveedores));
             this.lblRegistros = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dataProductos = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataProductos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.SeaGreen;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(871, 650);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(153, 29);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "[image] nuevo";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // lblRegistros
             // 
@@ -69,7 +57,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel2.Location = new System.Drawing.Point(1, 643);
+            this.panel2.Location = new System.Drawing.Point(1, 607);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1058, 1);
             this.panel2.TabIndex = 21;
@@ -91,19 +79,6 @@
             this.label1.Size = new System.Drawing.Size(59, 21);
             this.label1.TabIndex = 16;
             this.label1.Text = "Buscar:";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(396, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 29);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "[image] refrescar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtBuscar
             // 
@@ -148,27 +123,64 @@
             this.dataProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataProductos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             this.dataProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataProductos.Size = new System.Drawing.Size(1012, 555);
+            this.dataProductos.Size = new System.Drawing.Size(1012, 511);
             this.dataProductos.TabIndex = 13;
             this.dataProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataProveedores_CellContentClick);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Image = global::UI.Properties.Resources.icons8_refrescar_20;
+            this.button1.Location = new System.Drawing.Point(378, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 29);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "refrescar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.SeaGreen;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button4.Image = global::UI.Properties.Resources.icons8_agregar_20;
+            this.button4.Location = new System.Drawing.Point(871, 614);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(153, 29);
+            this.button4.TabIndex = 25;
+            this.button4.Text = "nuevo";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // FmrProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1036, 688);
+            this.ClientSize = new System.Drawing.Size(1036, 653);
             this.Controls.Add(this.button4);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblRegistros);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dataProductos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FmrProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FmrProveedores";
+            this.Text = "Proveedor";
             ((System.ComponentModel.ISupportInitialize)(this.dataProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -176,14 +188,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label lblRegistros;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridView dataProductos;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button4;
     }
 }

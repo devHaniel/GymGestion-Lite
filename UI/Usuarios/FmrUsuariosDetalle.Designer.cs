@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmrUsuariosDetalle));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,13 +48,15 @@
             this.cmbInactivo = new System.Windows.Forms.RadioButton();
             this.cmbActivo = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblEstado = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -243,40 +247,6 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "Estado:";
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnGuardar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGuardar.Location = new System.Drawing.Point(12, 434);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(218, 29);
-            this.btnGuardar.TabIndex = 18;
-            this.btnGuardar.Text = "[image] guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnLimpiar.Location = new System.Drawing.Point(246, 434);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(224, 29);
-            this.btnLimpiar.TabIndex = 19;
-            this.btnLimpiar.Text = "[image] limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnVolver.Location = new System.Drawing.Point(12, 472);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(458, 29);
-            this.btnVolver.TabIndex = 20;
-            this.btnVolver.Text = "[image] volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -296,6 +266,57 @@
             this.lblEstado.TabIndex = 22;
             this.lblEstado.Text = "Estado: Null";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnVolver.Image = global::UI.Properties.Resources.icons8_volver_20;
+            this.btnVolver.Location = new System.Drawing.Point(12, 472);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(458, 29);
+            this.btnVolver.TabIndex = 20;
+            this.btnVolver.Text = "volver";
+            this.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLimpiar.Image = global::UI.Properties.Resources.icons8_limpiar_20;
+            this.btnLimpiar.Location = new System.Drawing.Point(246, 434);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(224, 29);
+            this.btnLimpiar.TabIndex = 19;
+            this.btnLimpiar.Text = " limpiar";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnGuardar.Image = global::UI.Properties.Resources.icons8_documento_20;
+            this.btnGuardar.Location = new System.Drawing.Point(12, 434);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(218, 29);
+            this.btnGuardar.TabIndex = 18;
+            this.btnGuardar.Text = "guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
             // FmrUsuariosDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,6 +330,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FmrUsuariosDetalle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
@@ -316,6 +338,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,5 +369,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button btnVer;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

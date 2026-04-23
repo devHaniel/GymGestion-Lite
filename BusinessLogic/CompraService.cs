@@ -1,4 +1,5 @@
 ﻿using DataAccess;
+using Entities.VistaModelos;
 using Gimnasio.DataAccess;
 using Gimnasio.Entities;
 using Gimnasio.Entities.ViewModels;
@@ -19,7 +20,37 @@ namespace BusinessLogic
         {
             _compraRepository = new CompraRepository();
         }
+        public List<CompraVM> ObtenerTodas()
+        {
+            return _compraRepository.ObtenerTodas();
+        }
 
+        public CompraVM ObtenerPorId(int id)
+        {
+            if (id <= 0)
+                throw new ArgumentException("El ID debe ser mayor a 0.");
+
+            var compra = _compraRepository.ObtenerPorId(id);
+
+            if (compra == null)
+                throw new Exception($"No se encontró una compra con ID {id}.");
+
+            return compra;
+        }
+
+        public List<CompraDetalleVM> ObtenerPorIdVWDetalles(int id)
+        {
+            if (id <= 0)
+                throw new ArgumentException("El ID debe ser mayor a 0.");
+
+            var detalles = _compraRepository.ObtenerPorIdVWDetalles(id);
+
+            if (detalles == null)
+                throw new Exception($"No se encontraron los detalles con ID {id}.");
+
+            return detalles;
+
+        }
         public List<CompraDetalleVM> ObtenerPorCorte(int corteId)
         {
            return _compraRepository.ObtenerPorCorte(corteId);

@@ -25,8 +25,8 @@ namespace Gimnasio.DataAccess
             using (var con = new SqlConnection(Conexion.ConnectionString))
             {
                 return con.QueryFirstOrDefault<MembresiaActivaVM>(
-                    "SELECT * FROM VW_MEMBRESIAS_ACTIVAS WHERE ClienteId = @ClienteId",
-                    new { ClienteId = clienteId }
+                    "SELECT * FROM VW_MEMBRESIAS_ACTIVAS WHERE Cliente_Id = @Cliente_Id",
+                    new { Cliente_Id = clienteId }
                 );
             }
         }
@@ -37,8 +37,8 @@ namespace Gimnasio.DataAccess
             {
                 return con.Query<Membresia>(
                     @"SELECT * FROM MEMBRESIAS
-                      WHERE ClienteId = @ClienteId
-                      ORDER BY FechaInicio DESC",
+                      WHERE Cliente_Id = @Cliente_Id
+                      ORDER BY Fecha_Inicio DESC",
                     new { ClienteId = clienteId }
                 ).ToList();
             }
@@ -60,9 +60,9 @@ namespace Gimnasio.DataAccess
             {
                 return con.ExecuteScalar<int>(
                     @"INSERT INTO MEMBRESIAS
-                        (ClienteId, PlanId, FechaInicio, FechaFin, Estado, PrecioPagado)
+                        (Cliente_Id, Plan_Id, Fecha_Inicio, Fecha_Fin, Precio_Pagado)
                       VALUES
-                        (@ClienteId, @PlanId, @FechaInicio, @FechaFin, @Estado, @PrecioPagado);
+                        (@Cliente_Id, @Plan_Id, @Fecha_Inicio, @Fecha_Fin, @Precio_Pagado);
                       SELECT SCOPE_IDENTITY();",
                     membresia
                 );

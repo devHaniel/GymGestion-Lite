@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmrProductosDetalles));
             this.lblEstado = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbInactivo = new System.Windows.Forms.RadioButton();
+            this.cmbActivo = new System.Windows.Forms.RadioButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtStockMin = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtStockActual = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPrecioCompra = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,20 +49,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.txtStockActual = new System.Windows.Forms.NumericUpDown();
-            this.txtStockMin = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.cmbInactivo = new System.Windows.Forms.RadioButton();
-            this.cmbActivo = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStockActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStockMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStockActual)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEstado
@@ -102,6 +103,89 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Producto";
             // 
+            // cmbInactivo
+            // 
+            this.cmbInactivo.AutoSize = true;
+            this.cmbInactivo.Location = new System.Drawing.Point(234, 295);
+            this.cmbInactivo.Name = "cmbInactivo";
+            this.cmbInactivo.Size = new System.Drawing.Size(82, 25);
+            this.cmbInactivo.TabIndex = 22;
+            this.cmbInactivo.TabStop = true;
+            this.cmbInactivo.Text = "Inactivo";
+            this.cmbInactivo.UseVisualStyleBackColor = true;
+            // 
+            // cmbActivo
+            // 
+            this.cmbActivo.AutoSize = true;
+            this.cmbActivo.Location = new System.Drawing.Point(147, 295);
+            this.cmbActivo.Name = "cmbActivo";
+            this.cmbActivo.Size = new System.Drawing.Size(71, 25);
+            this.cmbActivo.TabIndex = 21;
+            this.cmbActivo.TabStop = true;
+            this.cmbActivo.Text = "Activo";
+            this.cmbActivo.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(68, 303);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 17);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Estado:";
+            // 
+            // cmbCategoria
+            // 
+            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategoria.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "Todos",
+            "Activo",
+            "Inactivo"});
+            this.cmbCategoria.Location = new System.Drawing.Point(145, 88);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(296, 29);
+            this.cmbCategoria.TabIndex = 19;
+            this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(51, 100);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 17);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Categoria:";
+            // 
+            // txtStockMin
+            // 
+            this.txtStockMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtStockMin.Location = new System.Drawing.Point(146, 250);
+            this.txtStockMin.Name = "txtStockMin";
+            this.txtStockMin.Size = new System.Drawing.Size(120, 25);
+            this.txtStockMin.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(29, 258);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 17);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Stock minimo:";
+            // 
+            // txtStockActual
+            // 
+            this.txtStockActual.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.txtStockActual.Location = new System.Drawing.Point(147, 210);
+            this.txtStockActual.Name = "txtStockActual";
+            this.txtStockActual.Size = new System.Drawing.Size(120, 25);
+            this.txtStockActual.TabIndex = 15;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -116,9 +200,11 @@
             // 
             this.txtPrecioCompra.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecioCompra.Location = new System.Drawing.Point(147, 168);
+            this.txtPrecioCompra.MaxLength = 100;
             this.txtPrecioCompra.Name = "txtPrecioCompra";
             this.txtPrecioCompra.Size = new System.Drawing.Size(294, 25);
             this.txtPrecioCompra.TabIndex = 12;
+            this.txtPrecioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioCompra_KeyPress);
             // 
             // label4
             // 
@@ -134,9 +220,11 @@
             // 
             this.txtPrecioVenta.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecioVenta.Location = new System.Drawing.Point(147, 127);
+            this.txtPrecioVenta.MaxLength = 100;
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Size = new System.Drawing.Size(294, 25);
             this.txtPrecioVenta.TabIndex = 10;
+            this.txtPrecioVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecioVenta_KeyPress);
             // 
             // label3
             // 
@@ -152,6 +240,7 @@
             // 
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(147, 52);
+            this.txtNombre.MaxLength = 100;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(294, 25);
             this.txtNombre.TabIndex = 8;
@@ -185,120 +274,53 @@
             this.txtCodigo.Size = new System.Drawing.Size(125, 25);
             this.txtCodigo.TabIndex = 5;
             // 
-            // txtStockActual
-            // 
-            this.txtStockActual.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtStockActual.Location = new System.Drawing.Point(147, 210);
-            this.txtStockActual.Name = "txtStockActual";
-            this.txtStockActual.Size = new System.Drawing.Size(120, 25);
-            this.txtStockActual.TabIndex = 15;
-            // 
-            // txtStockMin
-            // 
-            this.txtStockMin.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.txtStockMin.Location = new System.Drawing.Point(146, 250);
-            this.txtStockMin.Name = "txtStockMin";
-            this.txtStockMin.Size = new System.Drawing.Size(120, 25);
-            this.txtStockMin.TabIndex = 17;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 258);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 17);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Stock minimo:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(51, 100);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 17);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "Categoria:";
-            // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategoria.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Items.AddRange(new object[] {
-            "Todos",
-            "Activo",
-            "Inactivo"});
-            this.cmbCategoria.Location = new System.Drawing.Point(145, 88);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(296, 29);
-            this.cmbCategoria.TabIndex = 19;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnVolver.Location = new System.Drawing.Point(12, 435);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(458, 29);
-            this.btnVolver.TabIndex = 28;
-            this.btnVolver.Text = "[image] volver";
-            this.btnVolver.UseVisualStyleBackColor = true;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.btnLimpiar.Location = new System.Drawing.Point(246, 397);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(224, 29);
-            this.btnLimpiar.TabIndex = 27;
-            this.btnLimpiar.Text = "[image] limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnGuardar.Image = global::UI.Properties.Resources.icons8_documento_20;
             this.btnGuardar.Location = new System.Drawing.Point(12, 397);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(218, 29);
-            this.btnGuardar.TabIndex = 26;
-            this.btnGuardar.Text = "[image] guardar";
+            this.btnGuardar.TabIndex = 29;
+            this.btnGuardar.Text = "guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // cmbInactivo
+            // btnLimpiar
             // 
-            this.cmbInactivo.AutoSize = true;
-            this.cmbInactivo.Location = new System.Drawing.Point(234, 295);
-            this.cmbInactivo.Name = "cmbInactivo";
-            this.cmbInactivo.Size = new System.Drawing.Size(82, 25);
-            this.cmbInactivo.TabIndex = 22;
-            this.cmbInactivo.TabStop = true;
-            this.cmbInactivo.Text = "Inactivo";
-            this.cmbInactivo.UseVisualStyleBackColor = true;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnLimpiar.Image = global::UI.Properties.Resources.icons8_limpiar_20;
+            this.btnLimpiar.Location = new System.Drawing.Point(246, 397);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(224, 29);
+            this.btnLimpiar.TabIndex = 30;
+            this.btnLimpiar.Text = " limpiar";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // cmbActivo
+            // btnVolver
             // 
-            this.cmbActivo.AutoSize = true;
-            this.cmbActivo.Location = new System.Drawing.Point(147, 295);
-            this.cmbActivo.Name = "cmbActivo";
-            this.cmbActivo.Size = new System.Drawing.Size(71, 25);
-            this.cmbActivo.TabIndex = 21;
-            this.cmbActivo.TabStop = true;
-            this.cmbActivo.Text = "Activo";
-            this.cmbActivo.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(68, 303);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 17);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "Estado:";
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.btnVolver.Image = global::UI.Properties.Resources.icons8_volver_20;
+            this.btnVolver.Location = new System.Drawing.Point(12, 432);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(458, 29);
+            this.btnVolver.TabIndex = 31;
+            this.btnVolver.Text = "volver";
+            this.btnVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // FmrProductosDetalles
             // 
@@ -312,13 +334,14 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FmrProductosDetalles";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Productos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtStockActual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStockMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStockActual)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,11 +366,11 @@
         private System.Windows.Forms.NumericUpDown txtStockMin;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbCategoria;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.RadioButton cmbInactivo;
         private System.Windows.Forms.RadioButton cmbActivo;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

@@ -1,14 +1,36 @@
 using Dapper;
 using DataAccess;
+using Entities.VistaModelos;
 using Gimnasio.Entities;
 using Gimnasio.Entities.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace Gimnasio.DataAccess
 {
     public class CompraRepository
     {
+        public List<CompraVM> ObtenerTodas()
+        {
+            using (var con = new SqlConnection(Conexion.ConnectionString))
+            {
+                return con.Query<CompraVM>(
+                    "SELECT * FROM VW_COMPRAS ORDER BY Fecha DESC"
+                ).AsList();
+            }
+        }
+
+        public CompraVM ObtenerPorId(int id)
+        {
+            using (var con = new SqlConnection(Conexion.ConnectionString))
+            {
+                return con.QueryFirstOrDefault<CompraVM>(
+                    "SELECT * FROM VW_COMPRAS WHERE Id = @Id",
+                    new { Id = id }
+                );
+            }
+        }
         public List<CompraDetalleVM> ObtenerPorCorte(int corteId)
         {
             using (var con = new SqlConnection(Conexion.ConnectionString))
@@ -19,6 +41,19 @@ namespace Gimnasio.DataAccess
                     new { Corte_Id = corteId }
                 ).AsList();
         
+            }
+        }
+
+        public List<CompraDetalleVM> ObtenerPorIdVWDetalles(int compraId)
+        {
+            using (var con = new SqlConnection(Conexion.ConnectionString))
+            {
+
+                return con.Query<CompraDetalleVM>(
+                    "SELECT * FROM VW_COMPRAS_DETALLE WHERE Compra_Id = @Compra_Id ORDER BY Fecha DESC",
+                    new { Compra_Id = compraId }
+                ).AsList();
+
             }
         }
 
@@ -50,35 +85,35 @@ namespace Gimnasio.DataAccess
                 {
                     try
                     {
-                        int compraId = con.ExecuteScalar<int>(
+                        int compra_Id = con.ExecuteScalar<int>(
                             @"INSERT INTO COMPRAS
-                        (CorteId, ProveedorId, UsuarioId, Fecha, Total, Estado, Notas)
+                        (Corte_Id, Proveedor_Id, Usuario_Id, Fecha, Total, Estado, Notas)
                       VALUES
-                        (@CorteId, @ProveedorId, @UsuarioId, @Fecha, @Total, @Estado, @Notas);
+                        (@Corte_Id, @Proveedor_Id, @Usuario_Id, @Fecha, @Total, @Estado, @Notas);
                       SELECT SCOPE_IDENTITY();",
                             compra, trx
                         );
 
                         foreach (var item in detalle)
                         {
-                            item.CompraId = compraId;
+                            item.Compra_Id = compra_Id;
                             con.Execute(
                                 @"INSERT INTO DETALLE_COMPRAS
-                            (CompraId, ProductoId, Cantidad, PrecioUnitario)
+                            (Compra_Id, Producto_Id, Cantidad, Precio_Unitario)
                           VALUES
-                            (@CompraId, @ProductoId, @Cantidad, @PrecioUnitario);",
+                            (@Compra_Id, @Producto_Id, @Cantidad, @Precio_Unitario);",
                                 item, trx
                             );
 
                             // Incrementar stock
                             con.Execute(
-                                "UPDATE PRODUCTOS SET StockActual = StockActual + @Cantidad WHERE Id = @ProductoId",
-                                new { item.Cantidad, item.ProductoId }, trx
+                                "UPDATE PRODUCTOS SET Stock_Actual = Stock_Actual + @Cantidad WHERE Id = @Producto_Id",
+                                new { item.Cantidad, item.Producto_Id }, trx
                             );
                         }
 
                         trx.Commit();
-                        return compraId;
+                        return compra_Id;
                     }
                     catch
                     {

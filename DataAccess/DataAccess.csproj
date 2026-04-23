@@ -189,6 +189,7 @@
     <Compile Include="CompraRepository.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="CorteRepository.cs" />
+    <Compile Include="DatabaseManager.cs" />
     <Compile Include="MembresiaRepository.cs" />
     <Compile Include="PlanMembresiaRepository.cs" />
     <Compile Include="ProductoRepository.cs" />
@@ -201,6 +202,7 @@
     <Compile Include="ProveedorRepository.cs" />
     <Compile Include="UsuarioRepository.cs" />
     <Compile Include="VentaRepository.cs" />
+    <Compile Include="VisitaRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -57,7 +57,6 @@ namespace UI.Cortes
 
             txtMembresiaT.Text = $"L. {_corteActual.Por_Membresias:N2}";
             txtProductoT.Text = $"L. {_corteActual.Por_Productos:N2}";
-            txtMixtasT.Text = $"L. {_corteActual.Por_Mixtas:N2}";
             txtTotalT.Text = $"L. {_corteActual.Ventas_Acumuladas:N2}";
         }
         private void button2_Click(object sender, EventArgs e)
@@ -80,7 +79,7 @@ namespace UI.Cortes
                     Total_Transferencia = _corteActual.Transferencia,
                     Total_Membresias = _corteActual.Por_Membresias,
                     Total_Productos = _corteActual.Por_Productos,
-                    Gran_Total = _corteActual.Ventas_Acumuladas,
+                    Gran_Total = _corteActual.Ventas_Acumuladas - _corteActual.Total_Compras,
                     Estado = "cerrado",
                     Observaciones = txtObservaciones?.Text ?? string.Empty
                 };
@@ -145,18 +144,14 @@ namespace UI.Cortes
         {
             if (_corteService.HayCorteAbierto())
             {
-                if (txtBuscarV.Text.Length > 0)
-                {
-
                     var ventasFiltro = _ventaService.ObtenerPorCorte(_corteActual.Corte_Id)
-                        .Where(v => v.Concepto.ToLower().Contains(txtBuscarV.Text.ToLower()))
+                        .Where(v => v.Tipo_venta.ToLower().Contains(txtBuscarV.Text.ToLower()))
                         .Select(v => new
                         {
                             v.Usuario,
                             v.Cliente,
-                            v.Tipo_Venta,
-                            v.Concepto,
-                            v.Subtotal,
+                            v.Tipo_venta,
+                            v.Total,
                             v.Fecha,
 
                         })
@@ -164,25 +159,7 @@ namespace UI.Cortes
                     dataVentas.DataSource = ventasFiltro;
                     lblRegistroV.Text = $"Registros: {ventasFiltro.Count}";
 
-                }
-                else
-                {
-                    var ventasFiltro = _ventaService.ObtenerPorCorte(_corteActual.Corte_Id)
-                        .Select(v => new
-                        {
-                            v.Usuario,
-                            v.Cliente,
-                            v.Tipo_Venta,
-                            v.Concepto,
-                            v.Subtotal,
-                            v.Fecha,
 
-                        })
-                        .ToList();
-                    dataVentas.DataSource = ventasFiltro;
-                    lblRegistroV.Text = $"Registros: {ventasFiltro.Count}";
-
-                }
             }
         }
         private void FiltrarVentas()
@@ -196,22 +173,15 @@ namespace UI.Cortes
                 // 1 - Membresías
                 // 2 - Producto
                 // 3 - Mixtas
-                if (indice == 0)
-                {
-                    CargarDataVentas();
-                }
-                if (indice > 0)
-                {
+               
                     var ventasFiltro = _ventaService.ObtenerPorCorte(_corteActual.Corte_Id)
-                        .Where(v => v.Concepto.ToLower().Contains(texto.ToLower())
-                                  && v.Tipo_Venta.ToLower().Equals(categoria.ToLower()))
+                        .Where(v => v.Tipo_venta.ToLower().Contains(texto.ToLower()))
                         .Select(v => new
                         {
                             v.Usuario,
                             v.Cliente,
-                            v.Tipo_Venta,
-                            v.Concepto,
-                            v.Subtotal,
+                            v.Tipo_venta,
+                            v.Total,
                             v.Fecha,
 
                         })
@@ -219,7 +189,6 @@ namespace UI.Cortes
                     dataVentas.DataSource = ventasFiltro;
                     lblRegistroV.Text = $"Registros: {ventasFiltro.Count}";
 
-                }
             }
         }
 
@@ -260,12 +229,19 @@ namespace UI.Cortes
         {
             var categorias = new CategoriaService();
             var products = new ProductoService();
-            cmbTipoC.DataSource = null;
+            try
+            {
+                cmbTipoC.DataSource = null;
 
-            var nombres = categorias.ObtenerTodos().Select(c =>  c.Nombre ).Distinct().ToList();
+                var nombres = categorias.ObtenerTodos().Select(c =>  c.Nombre ).Distinct().ToList();
 
-            nombres.Insert(0, "Todos");
-            cmbTipoC.DataSource = categorias;
+                nombres.Insert(0, "Todos");
+                cmbTipoC.DataSource = categorias;
+
+            }catch(Exception e)
+            {
+
+            }
 
         }
         private void CargarDataCompras()
@@ -363,6 +339,11 @@ namespace UI.Cortes
         private void cmbTipoC_SelectedIndexChanged(object sender, EventArgs e)
         {
             FiltrarCompras();
+        }
+
+        private void btnRefrescarC_Click(object sender, EventArgs e)
+        {
+            FiltrarVentas();
         }
     }
 }

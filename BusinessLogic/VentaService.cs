@@ -1,4 +1,5 @@
 ﻿using DataAccess;
+using Entities.VistaModelos;
 using Gimnasio.DataAccess;
 using Gimnasio.Entities;
 using Gimnasio.Entities.ViewModels;
@@ -20,7 +21,21 @@ namespace BusinessLogic
             _ventaRepository = new VentaRepository();
         }
 
-        public List<VentaDetalleVM> ObtenerPorCorte(int corteId)
+        public List<VentasVM> ObtenerTodas()
+        {
+            return _ventaRepository.ObtenerTodas();
+        }
+
+        public List<VentaDetalleVM> ObtenerPorIdVWDetalles(int id)
+        {
+            return _ventaRepository.ObtenerPorIdVWDetalles(id);
+        }
+
+        public VentasVM ObtenerPorId(int id)
+        {
+            return _ventaRepository.ObtenerPorId(id);
+        }
+        public List<VentasVM> ObtenerPorCorte(int corteId)
         {
             return _ventaRepository.ObtenerPorCorte(corteId);
         }
@@ -37,7 +52,7 @@ namespace BusinessLogic
 
         public int Insertar(Venta venta, List<DetalleVenta> detalle)
         {
-            if (venta == null || detalle == null) return -1;
+            if (venta == null) return -1;
 
             return _ventaRepository.Insertar(venta, detalle);
         }

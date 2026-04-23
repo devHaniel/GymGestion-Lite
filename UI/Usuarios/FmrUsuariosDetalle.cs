@@ -1,5 +1,6 @@
 ﻿using BusinessLogic;
 using BusinessLogic.Utils;
+using BusinessLogic.Validaciones;
 using Gimnasio.Entities;
 using Microsoft.VisualBasic;
 using System;
@@ -23,7 +24,7 @@ namespace UI.Usuarios
         public int IdUsuario { get; set; } = 0;
         public bool Detalles { get; set; } = false;
 
-        public FmrUsuariosDetalle(FmrUsuarios fmrUsuarios)
+        public FmrUsuariosDetalle(FmrUsuarios fmrUsuarios = null)
         {
             InitializeComponent();
             _usuarioService = new UsuarioService();
@@ -128,6 +129,11 @@ namespace UI.Usuarios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (!Validaciones.EsCorreoValido(txtEmail.Text))
+            {
+                errorProvider1.SetError(txtEmail, "Correo inválido");
+                return;
+            }
             if (Nuevo)
             {
                 GuardarUsuario();
@@ -170,7 +176,10 @@ namespace UI.Usuarios
             if(result > 0)
             {
                 MessageBox.Show("Usuario ingresado correctamente.");
-                _fmrUsuarios.Activos_Inactivos();
+                if(_fmrUsuarios != null)
+                {
+                    _fmrUsuarios.Activos_Inactivos();
+                }
                 this.Close();
             }
             else

@@ -1,4 +1,5 @@
-﻿using Entities;
+﻿using BusinessLogic.Validaciones;
+using Entities;
 using Gimnasio.DataAccess;
 using Gimnasio.Entities;
 using System.Collections.Generic;
@@ -21,22 +22,34 @@ namespace Gimnasio.BusinessLogic
 
         public Categoria ObtenerPorId(int id)
         {
-            return _categoriaRepository.ObtenerPorId(id);
+            if (Validaciones.EsNumeroPositivo(id))
+            {
+                return _categoriaRepository.ObtenerPorId(id);
+            }
+            return null;
         }
 
         public int Insertar(Categoria categoria)
         {
-            return _categoriaRepository.Insertar(categoria);
+            if(Validaciones.LongitudMinima(categoria.Nombre, 2))
+                return _categoriaRepository.Insertar(categoria);
+            return -1;
         }
 
         public bool Actualizar(Categoria categoria)
         {
+            if (!Validaciones.EsNumeroPositivo(categoria.Id) && !Validaciones.LongitudMinima(categoria.Nombre,2))
+            {
+                return false;
+            }
             return _categoriaRepository.Actualizar(categoria);
         }
 
         public bool Eliminar(int id)
         {
-            return _categoriaRepository.Eliminar(id);
+            if (Validaciones.EsNumeroPositivo(id))
+                return _categoriaRepository.Eliminar(id);
+            return false;
         }
     }
 }

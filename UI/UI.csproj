@@ -7,11 +7,27 @@
     <ProjectGuid>{2EDC802F-A996-471C-A2BA-741B51DD7987}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>UI</RootNamespace>
-    <AssemblyName>UI</AssemblyName>
+    <AssemblyName>GymGestion</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\haniel\Desktop\setup\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -32,6 +48,24 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>UI.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mancuernas-_2_.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>965B13C1A67199A312E1907461CAA2D5B09B7F9C</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>UI_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -105,6 +139,42 @@
     <Compile Include="Categorias\FmrCategoriasDetalles.Designer.cs">
       <DependentUpon>FmrCategoriasDetalles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clientes\FmrClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\FmrClientes.Designer.cs">
+      <DependentUpon>FmrClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\FmrClientesDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\FmrClientesDetalles.Designer.cs">
+      <DependentUpon>FmrClientesDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\FmrClientesRegistro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes\FmrClientesRegistro.Designer.cs">
+      <DependentUpon>FmrClientesRegistro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\FmrCompraDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\FmrCompraDetalles.Designer.cs">
+      <DependentUpon>FmrCompraDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\FmrCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\FmrCompras.Designer.cs">
+      <DependentUpon>FmrCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\FmrComprasRealizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\FmrComprasRealizar.Designer.cs">
+      <DependentUpon>FmrComprasRealizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cortes\FmrCorte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,11 +193,23 @@
     <Compile Include="Cortes\FmrCorteMain.Designer.cs">
       <DependentUpon>FmrCorteMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FmrDatabaseOperaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmrDatabaseOperaciones.Designer.cs">
+      <DependentUpon>FmrDatabaseOperaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="FmrMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FmrMain.Designer.cs">
       <DependentUpon>FmrMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FmrOperaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmrOperaciones.Designer.cs">
+      <DependentUpon>FmrOperaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\FmrLogin.cs">
       <SubType>Form</SubType>
@@ -135,11 +217,35 @@
     <Compile Include="Login\FmrLogin.Designer.cs">
       <DependentUpon>FmrLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlanesMembresias\FmrPlanesMembresias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanesMembresias\FmrPlanesMembresias.Designer.cs">
+      <DependentUpon>FmrPlanesMembresias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanesMembresias\FmrPlanesMembresiasDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanesMembresias\FmrPlanesMembresiasDetalles.Designer.cs">
+      <DependentUpon>FmrPlanesMembresiasDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanesMembresias\FmrPlanesRenovar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanesMembresias\FmrPlanesRenovar.Designer.cs">
+      <DependentUpon>FmrPlanesRenovar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\FmrProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Productos\FmrProductos.Designer.cs">
       <DependentUpon>FmrProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\FmrProductosCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FmrProductosCompra.Designer.cs">
+      <DependentUpon>FmrProductosCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos\FmrProductosDetalles.cs">
       <SubType>Form</SubType>
@@ -147,11 +253,23 @@
     <Compile Include="Productos\FmrProductosDetalles.Designer.cs">
       <DependentUpon>FmrProductosDetalles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\FmrProductoVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\FmrProductoVenta.Designer.cs">
+      <DependentUpon>FmrProductoVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedores\FmrProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Proveedores\FmrProveedores.Designer.cs">
       <DependentUpon>FmrProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores\FmrProveedoresCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\FmrProveedoresCompra.Designer.cs">
+      <DependentUpon>FmrProveedoresCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Proveedores\FmrProveedoresDetalle.cs">
       <SubType>Form</SubType>
@@ -173,11 +291,48 @@
     <Compile Include="Usuarios\FmrUsuariosDetalle.Designer.cs">
       <DependentUpon>FmrUsuariosDetalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="ValidacionesUI\ValidacionesUI.cs" />
+    <Compile Include="Ventas\FmrVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\FmrVentas.Designer.cs">
+      <DependentUpon>FmrVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\FmrVentasDetalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\FmrVentasDetalles.Designer.cs">
+      <DependentUpon>FmrVentasDetalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\FmrVentasRealizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\FmrVentasRealizar.Designer.cs">
+      <DependentUpon>FmrVentasRealizar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Categorias\FmrCategorias.resx">
       <DependentUpon>FmrCategorias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Categorias\FmrCategoriasDetalles.resx">
       <DependentUpon>FmrCategoriasDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\FmrClientes.resx">
+      <DependentUpon>FmrClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\FmrClientesDetalles.resx">
+      <DependentUpon>FmrClientesDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\FmrClientesRegistro.resx">
+      <DependentUpon>FmrClientesRegistro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\FmrCompraDetalles.resx">
+      <DependentUpon>FmrCompraDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\FmrCompras.resx">
+      <DependentUpon>FmrCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\FmrComprasRealizar.resx">
+      <DependentUpon>FmrComprasRealizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cortes\FmrCorte.resx">
       <DependentUpon>FmrCorte.cs</DependentUpon>
@@ -188,20 +343,44 @@
     <EmbeddedResource Include="Cortes\FmrCorteMain.resx">
       <DependentUpon>FmrCorteMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FmrDatabaseOperaciones.resx">
+      <DependentUpon>FmrDatabaseOperaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FmrMain.resx">
       <DependentUpon>FmrMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmrOperaciones.resx">
+      <DependentUpon>FmrOperaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\FmrLogin.resx">
       <DependentUpon>FmrLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PlanesMembresias\FmrPlanesMembresias.resx">
+      <DependentUpon>FmrPlanesMembresias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanesMembresias\FmrPlanesMembresiasDetalles.resx">
+      <DependentUpon>FmrPlanesMembresiasDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanesMembresias\FmrPlanesRenovar.resx">
+      <DependentUpon>FmrPlanesRenovar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\FmrProductos.resx">
       <DependentUpon>FmrProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FmrProductosCompra.resx">
+      <DependentUpon>FmrProductosCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\FmrProductosDetalles.resx">
       <DependentUpon>FmrProductosDetalles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Productos\FmrProductoVenta.resx">
+      <DependentUpon>FmrProductoVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\FmrProveedores.resx">
       <DependentUpon>FmrProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\FmrProveedoresCompra.resx">
+      <DependentUpon>FmrProveedoresCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\FmrProveedoresDetalle.resx">
       <DependentUpon>FmrProveedoresDetalle.cs</DependentUpon>
@@ -222,6 +401,15 @@
     <EmbeddedResource Include="Usuarios\FmrUsuariosDetalle.resx">
       <DependentUpon>FmrUsuariosDetalle.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\FmrVentas.resx">
+      <DependentUpon>FmrVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\FmrVentasDetalles.resx">
+      <DependentUpon>FmrVentasDetalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\FmrVentasRealizar.resx">
+      <DependentUpon>FmrVentasRealizar.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -232,6 +420,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="UI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -256,7 +445,25 @@
     <None Include="Resources\mancuernas %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Compras\" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mancuernas-_2_.ico" />
+    <None Include="Resources\icons8-buscar-20.png" />
+    <None Include="Resources\icons8-agregar-20.png" />
+    <None Include="Resources\icons8-refrescar-20.png" />
+    <None Include="Resources\icons8-volver-20.png" />
+    <None Include="Resources\icons8-limpiar-20.png" />
+    <None Include="Resources\icons8-documento-20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

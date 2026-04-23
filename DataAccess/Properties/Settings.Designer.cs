@@ -26,8 +26,8 @@ namespace DataAccess.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=SIS_GYM;Integrated Security=True;TrustServerC" +
-            "ertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=SIS_GYM;Integrated Security=True;TrustServe" +
+            "rCertificate=True")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Clientes;
+using UI.Compras;
 using UI.Cortes;
 using UI.Login;
+using UI.PlanesMembresias;
 using UI.Productos;
 using UI.Proveedores;
+using UI.Ventas;
 
 namespace UI
 {
@@ -21,13 +25,11 @@ namespace UI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //var login = new FmrLogin();
-
-            //if (login.ShowDialog() == DialogResult.OK)
-            //{
-            //    Application.Run(new FmrMain() { Usuario = login.Usuario });
-            //}
-            Application.Run(new FmrProductos());
+            using (var login = new FmrLogin())
+            {
+                if (login.ShowDialog() == DialogResult.OK)
+                    Application.Run(new FmrMain(login.Usuario));
+            }
         }
     }
 }

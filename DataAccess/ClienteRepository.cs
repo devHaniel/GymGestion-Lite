@@ -30,19 +30,19 @@ namespace Gimnasio.DataAccess
             }
         }
 
-        public List<Cliente> Buscar(string texto)
+        public List<Cliente> Buscar(string texto, int activo)
         {
             using (var con = new SqlConnection(Conexion.ConnectionString))
             {
                 return con.Query<Cliente>(
                     @"SELECT * FROM CLIENTES
-                  WHERE Activo = 1
+                  WHERE Activo = @activo
                     AND (Nombre     LIKE @Texto
                       OR Apellido   LIKE @Texto
                       OR Documento  LIKE @Texto
                       OR Telefono   LIKE @Texto)
                   ORDER BY Apellido, Nombre",
-                    new { Texto = $"%{texto}%" }
+                    new { Texto = $"%{texto}%", activo = activo }
                 ).AsList();
 
             }
@@ -54,9 +54,9 @@ namespace Gimnasio.DataAccess
             {
                 return con.ExecuteScalar<int>(
                     @"INSERT INTO CLIENTES
-                    (Nombre, Apellido, Email, Telefono, Documento, FechaNacimiento, Activo)
+                    (Nombre, Apellido, Email, Telefono, Documento, Fecha_Nacimiento, Activo)
                   VALUES
-                    (@Nombre, @Apellido, @Email, @Telefono, @Documento, @FechaNacimiento, @Activo);
+                    (@Nombre, @Apellido, @Email, @Telefono, @Documento, @Fecha_Nacimiento, @Activo);
                   SELECT SCOPE_IDENTITY();",
                     cliente
                 );
@@ -75,7 +75,7 @@ namespace Gimnasio.DataAccess
                     Email           = @Email,
                     Telefono        = @Telefono,
                     Documento       = @Documento,
-                    FechaNacimiento = @FechaNacimiento
+                    Fecha_Nacimiento = @Fecha_Nacimiento
                   WHERE Id = @Id",
                     cliente
                 );
@@ -93,6 +93,18 @@ namespace Gimnasio.DataAccess
                     new { Id = id }
                 );
             return filas > 0;
+            }
+        }
+
+        public bool Activar(int id)
+        {
+            using (var con = new SqlConnection(Conexion.ConnectionString))
+            {
+                int filas = con.Execute(
+                    "UPDATE CLIENTES SET Activo = 1 WHERE Id = @Id",
+                    new { Id = id }
+                );
+                return filas > 0;
             }
         }
     }

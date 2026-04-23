@@ -1,5 +1,6 @@
 ﻿using BusinessLogic;
 using BusinessLogic.Utils;
+using BusinessLogic.Validaciones;
 using Gimnasio.Entities;
 using System;
 using System.Collections.Generic;
@@ -73,6 +74,11 @@ namespace UI.Proveedores
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (!Validaciones.EsCorreoValido(txtEmail.Text))
+            {
+                errorProvider1.SetError(txtEmail, "Correo inválido");
+                return;
+            }
             if (Nuevo)
             {
                 GuardarProveedor();

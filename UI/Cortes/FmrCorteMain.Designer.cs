@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmrCorteMain));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtGTotal = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtTotalC = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label23 = new System.Windows.Forms.Label();
             this.txtCierre = new System.Windows.Forms.TextBox();
@@ -41,14 +50,11 @@
             this.label22 = new System.Windows.Forms.Label();
             this.txtApertura = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtTotalM = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel16 = new System.Windows.Forms.Panel();
             this.txtTransferenciaM = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTarjetaM = new System.Windows.Forms.TextBox();
@@ -56,20 +62,15 @@
             this.txtEfectivoM = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtProducto = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtMembresia = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.txtTotalM = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.lblNCorte = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -97,18 +98,105 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.panel6);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.txtGTotal);
+            this.panel3.Controls.Add(this.label17);
+            this.panel3.Controls.Add(this.label7);
+            this.panel3.Controls.Add(this.txtTotalC);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.groupBox4);
+            this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.groupBox2);
             this.panel3.Controls.Add(this.groupBox3);
+            this.panel3.Controls.Add(this.txtTotalM);
             this.panel3.Controls.Add(this.panel2);
+            this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.lblNCorte);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 48);
+            this.panel3.Location = new System.Drawing.Point(0, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1041, 577);
+            this.panel3.Size = new System.Drawing.Size(1041, 561);
             this.panel3.TabIndex = 20;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel6.Location = new System.Drawing.Point(671, 469);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1, 80);
+            this.panel6.TabIndex = 42;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(989, 485);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(25, 25);
+            this.label16.TabIndex = 49;
+            this.label16.Text = "L.";
+            // 
+            // txtGTotal
+            // 
+            this.txtGTotal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGTotal.Location = new System.Drawing.Point(779, 482);
+            this.txtGTotal.Name = "txtGTotal";
+            this.txtGTotal.ReadOnly = true;
+            this.txtGTotal.Size = new System.Drawing.Size(197, 33);
+            this.txtGTotal.TabIndex = 48;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(699, 491);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(74, 17);
+            this.label17.TabIndex = 47;
+            this.label17.Text = "Gran total:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(580, 520);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 25);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "L.";
+            // 
+            // txtTotalC
+            // 
+            this.txtTotalC.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalC.Location = new System.Drawing.Point(431, 511);
+            this.txtTotalC.Name = "txtTotalC";
+            this.txtTotalC.ReadOnly = true;
+            this.txtTotalC.Size = new System.Drawing.Size(143, 33);
+            this.txtTotalC.TabIndex = 45;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(326, 520);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(99, 17);
+            this.label13.TabIndex = 44;
+            this.label13.Text = "Total compras:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(580, 469);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(25, 25);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "L.";
             // 
             // groupBox4
             // 
@@ -125,7 +213,7 @@
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.groupBox4.Location = new System.Drawing.Point(12, 274);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(305, 291);
+            this.groupBox4.Size = new System.Drawing.Size(305, 275);
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "General";
@@ -216,15 +304,19 @@
             this.label21.TabIndex = 39;
             this.label21.Text = "Apertura:";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel4.Location = new System.Drawing.Point(329, 449);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1000, 1);
+            this.panel4.TabIndex = 43;
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtTotalM);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.panel16);
             this.groupBox2.Controls.Add(this.txtTransferenciaM);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtTarjetaM);
@@ -235,20 +327,10 @@
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.groupBox2.Location = new System.Drawing.Point(329, 274);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(343, 291);
+            this.groupBox2.Size = new System.Drawing.Size(343, 166);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Por método de pago";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(293, 220);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(25, 25);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "L.";
             // 
             // label11
             // 
@@ -279,33 +361,6 @@
             this.label9.Size = new System.Drawing.Size(25, 25);
             this.label9.TabIndex = 33;
             this.label9.Text = "L.";
-            // 
-            // txtTotalM
-            // 
-            this.txtTotalM.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalM.Location = new System.Drawing.Point(141, 217);
-            this.txtTotalM.Name = "txtTotalM";
-            this.txtTotalM.ReadOnly = true;
-            this.txtTotalM.Size = new System.Drawing.Size(143, 33);
-            this.txtTotalM.TabIndex = 32;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(48, 226);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 17);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "Total ventas:";
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel16.Location = new System.Drawing.Point(0, 199);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(460, 1);
-            this.panel16.TabIndex = 30;
             // 
             // txtTransferenciaM
             // 
@@ -366,47 +421,20 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.panel4);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.textBox3);
+            this.groupBox3.Controls.Add(this.txtProducto);
             this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.txtMembresia);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
             this.groupBox3.Location = new System.Drawing.Point(686, 274);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(343, 291);
+            this.groupBox3.Size = new System.Drawing.Size(343, 166);
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Por tipo de venta";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(300, 220);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(25, 25);
-            this.label7.TabIndex = 49;
-            this.label7.Text = "L.";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(303, 126);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(25, 25);
-            this.label13.TabIndex = 48;
-            this.label13.Text = "L.";
             // 
             // label14
             // 
@@ -428,60 +456,14 @@
             this.label15.TabIndex = 46;
             this.label15.Text = "L.";
             // 
-            // textBox1
+            // txtProducto
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(148, 217);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(143, 33);
-            this.textBox1.TabIndex = 45;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(43, 226);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(87, 17);
-            this.label16.TabIndex = 44;
-            this.label16.Text = "Total ventas:";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel4.Location = new System.Drawing.Point(6, 199);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(460, 1);
-            this.panel4.TabIndex = 43;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(147, 118);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(143, 33);
-            this.textBox2.TabIndex = 42;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(92, 126);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(49, 17);
-            this.label17.TabIndex = 41;
-            this.label17.Text = "Mixtas:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(147, 71);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(143, 33);
-            this.textBox3.TabIndex = 40;
+            this.txtProducto.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProducto.Location = new System.Drawing.Point(147, 71);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.ReadOnly = true;
+            this.txtProducto.Size = new System.Drawing.Size(143, 33);
+            this.txtProducto.TabIndex = 40;
             // 
             // label18
             // 
@@ -493,14 +475,14 @@
             this.label18.TabIndex = 39;
             this.label18.Text = "Productos:";
             // 
-            // textBox4
+            // txtMembresia
             // 
-            this.textBox4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(147, 26);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(143, 33);
-            this.textBox4.TabIndex = 38;
+            this.txtMembresia.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMembresia.Location = new System.Drawing.Point(147, 26);
+            this.txtMembresia.Name = "txtMembresia";
+            this.txtMembresia.ReadOnly = true;
+            this.txtMembresia.Size = new System.Drawing.Size(143, 33);
+            this.txtMembresia.TabIndex = 38;
             // 
             // label19
             // 
@@ -512,6 +494,15 @@
             this.label19.TabIndex = 37;
             this.label19.Text = "Membresías:";
             // 
+            // txtTotalM
+            // 
+            this.txtTotalM.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalM.Location = new System.Drawing.Point(431, 461);
+            this.txtTotalM.Name = "txtTotalM";
+            this.txtTotalM.ReadOnly = true;
+            this.txtTotalM.Size = new System.Drawing.Size(143, 33);
+            this.txtTotalM.TabIndex = 32;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -519,6 +510,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1017, 1);
             this.panel2.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(326, 477);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 17);
+            this.label8.TabIndex = 31;
+            this.label8.Text = "Total ventas:";
             // 
             // lblNCorte
             // 
@@ -580,13 +581,18 @@
             // btnRefrescarC
             // 
             this.btnRefrescarC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(212)))));
+            this.btnRefrescarC.FlatAppearance.BorderSize = 0;
+            this.btnRefrescarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRefrescarC.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnRefrescarC.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRefrescarC.Image = global::UI.Properties.Resources.icons8_refrescar_20;
             this.btnRefrescarC.Location = new System.Drawing.Point(295, 25);
             this.btnRefrescarC.Name = "btnRefrescarC";
             this.btnRefrescarC.Size = new System.Drawing.Size(153, 29);
             this.btnRefrescarC.TabIndex = 36;
-            this.btnRefrescarC.Text = "[image] refrescar";
+            this.btnRefrescarC.Text = "refrescar";
+            this.btnRefrescarC.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefrescarC.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRefrescarC.UseVisualStyleBackColor = false;
             this.btnRefrescarC.Click += new System.EventHandler(this.btnRefrescarC_Click);
             // 
@@ -605,26 +611,26 @@
             this.dataCortes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataCortes.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             this.dataCortes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataCortes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataCortes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataCortes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataCortes.Location = new System.Drawing.Point(6, 63);
             this.dataCortes.Name = "dataCortes";
             this.dataCortes.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataCortes.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataCortes.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataCortes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataCortes.Size = new System.Drawing.Size(1005, 152);
             this.dataCortes.TabIndex = 29;
@@ -715,7 +721,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 625);
+            this.ClientSize = new System.Drawing.Size(1041, 615);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.button1);
@@ -725,8 +731,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FmrCorteMain";
-            this.Text = "FmrCorteMain";
+            this.Text = "Corte";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -767,25 +774,17 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtTotalM;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.TextBox txtTransferenciaM;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtTarjetaM;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEfectivoM;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtMembresia;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtCierre;
         private System.Windows.Forms.TextBox txtCajero;
@@ -801,5 +800,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtTotalC;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtGTotal;
+        private System.Windows.Forms.Label label17;
     }
 }

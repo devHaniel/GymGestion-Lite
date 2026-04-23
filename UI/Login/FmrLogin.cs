@@ -1,5 +1,6 @@
 ﻿using BusinessLogic;
 using BusinessLogic.Utils;
+using BusinessLogic.Validaciones;
 using Gimnasio.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Usuarios;
 
 namespace UI.Login
 {
@@ -21,6 +23,18 @@ namespace UI.Login
         {
             InitializeComponent();
             _usuarioService = new UsuarioService();
+            VerificarExistencia();
+        }
+
+        private void VerificarExistencia()
+        {
+            var usuarios = _usuarioService.ObtenerTodos();
+            if(usuarios.Count == 0)
+            {
+                FmrUsuariosDetalle fmrUsuariosDetalle = new FmrUsuariosDetalle() { Nuevo = true };
+                fmrUsuariosDetalle.Modo();
+                fmrUsuariosDetalle.ShowDialog();
+            }
         }
 
         private void cbMostrar_CheckedChanged(object sender, EventArgs e)
@@ -40,6 +54,11 @@ namespace UI.Login
 
         private void VerificarUsuario()
         {
+            if (!Validaciones.EsCorreoValido(txtCorreo.Text))
+            {
+                errorProvider1.SetError(txtCorreo, "Correo inválido");
+                return;
+            }
             var correo = txtCorreo.Text;
             var contra = txtContra.Text;
 
@@ -69,8 +88,7 @@ namespace UI.Login
                 usuario.Password_Hash.Equals(contraEncriptada))
             {
                 this.Usuario = usuario;
-                this.DialogResult = DialogResult.OK; // 👈 clave
-                this.Close();
+                this.DialogResult = DialogResult.OK; 
             }
             else
             {

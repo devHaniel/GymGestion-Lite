@@ -55,6 +55,7 @@ namespace UI.Productos
             //Stock
             //Stoc Minimo
             //Activo
+            //Inactivo
             //Categoria
 
             if (comboBox1.SelectedIndex < 0) return;
@@ -92,7 +93,17 @@ namespace UI.Productos
                         .Where(p => p.Stock_Actual <= p.Stock_Minimo)
                         .ToList();
                     break;
+                case 5:
+                    productos = _productoService.ObtenerTodos()
+                        .Where(p => p.Activo)
+                        .ToList();
+                    break;
                 case 6:
+                    productos = _productoService.ObtenerTodos()
+                        .Where(p => !p.Activo)
+                        .ToList();
+                    break;
+                case 7:
                     productos = _productoService.ObtenerTodos()
                         .Where(p => p.Categoria.ToLower().Contains(txtBuscar.Text.ToLower()))
                         .ToList();

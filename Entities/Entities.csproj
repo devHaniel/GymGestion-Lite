@@ -98,12 +98,15 @@
     <Compile Include="Proveedor.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Venta.cs" />
+    <Compile Include="Visita.cs" />
     <Compile Include="VistaModelos\CompraDetalleVM.cs" />
+    <Compile Include="VistaModelos\CompraVM.cs" />
     <Compile Include="VistaModelos\CorteActivoVM.cs" />
     <Compile Include="VistaModelos\MembresiaActivaVM.cs" />
     <Compile Include="VistaModelos\ProductoVM.cs" />
     <Compile Include="VistaModelos\StockBajoVM.cs" />
     <Compile Include="VistaModelos\VentaDetalleVM.cs" />
+    <Compile Include="VistaModelos\VentasVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

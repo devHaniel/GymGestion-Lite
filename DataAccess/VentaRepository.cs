@@ -6,17 +6,51 @@ using System.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Entities.VistaModelos;
 
 namespace Gimnasio.DataAccess
 {
     public class VentaRepository
     {
-        public List<VentaDetalleVM> ObtenerPorCorte(int corteId)
+        private readonly MembresiaRepository _membresiaRepository = new MembresiaRepository();
+        private readonly PlanMembresiaRepository _planMembresia = new PlanMembresiaRepository();
+        public List<VentasVM> ObtenerTodas()
+        {
+            using (var con = new SqlConnection(Conexion.ConnectionString))
+            {
+                return con.Query<VentasVM>(
+                    "SELECT * FROM VW_VENTAS ORDER BY Fecha DESC"
+                ).ToList();
+            }
+        }
+
+        public List<VentaDetalleVM> ObtenerPorIdVWDetalles(int id)
         {
             using (var con = new SqlConnection(Conexion.ConnectionString))
             {
                 return con.Query<VentaDetalleVM>(
-                    "SELECT * FROM VW_VENTAS_DETALLE WHERE Corte_Id = @Corte_Id ORDER BY Fecha DESC",
+                    "SELECT * FROM VW_VENTAS_DETALLE WHERE venta_id = @id ORDER BY Fecha DESC",
+                    new {id = id}
+                ).ToList();
+            }
+        }
+
+        public VentasVM ObtenerPorId(int id)
+        {
+            using (var con = new SqlConnection(Conexion.ConnectionString))
+            {
+                return con.QueryFirstOrDefault<VentasVM>(
+                    "SELECT * FROM VW_VENTAS WHERE id = @id ORDER BY Fecha DESC",
+                    new { id = id }
+                );
+            }
+        }
+        public List<VentasVM> ObtenerPorCorte(int corteId)
+        {
+            using (var con = new SqlConnection(Conexion.ConnectionString))
+            {
+                return con.Query<VentasVM>(
+                    "SELECT * FROM VW_VENTAS WHERE Corte_Id = @Corte_Id ORDER BY Fecha DESC",
                     new { Corte_Id = corteId }
                 ).ToList();
             }
@@ -40,7 +74,7 @@ namespace Gimnasio.DataAccess
             using (var con = new SqlConnection(Conexion.ConnectionString))
             {
                 return con.Query<VentaDetalleVM>(
-                    "SELECT * FROM VW_VENTAS_DETALLE WHERE ClienteId = @ClienteId ORDER BY Fecha DESC",
+                    "SELECT * FROM VW_VENTAS_DETALLE WHERE Cliente_Id = @ClienteId ORDER BY Fecha DESC",
                     new { ClienteId = clienteId }
                 ).ToList();
             }
@@ -63,35 +97,56 @@ namespace Gimnasio.DataAccess
                     {
                         int ventaId = con.ExecuteScalar<int>(
                             @"INSERT INTO VENTAS
-                                (CorteId, ClienteId, UsuarioId, MembresiaId, Fecha,
-                                 Subtotal, Descuento, Total, MetodoPago, TipoVenta)
+                                (Corte_Id, Cliente_Id, Usuario_Id, Plan_Id, Fecha,
+                                 Subtotal, Descuento, Total, Metodo_Pago, Tipo_Venta)
                               VALUES
-                                (@CorteId, @ClienteId, @UsuarioId, @MembresiaId, @Fecha,
-                                 @Subtotal, @Descuento, @Total, @MetodoPago, @TipoVenta);
+                                (@Corte_Id, @Cliente_Id, @Usuario_Id, @Plan_Id, @Fecha,
+                                 @Subtotal, @Descuento, @Total, @Metodo_Pago, @Tipo_Venta);
                               SELECT SCOPE_IDENTITY();",
                             venta, trx
                         );
 
-                        foreach (var item in detalle)
+                        if(!venta.Tipo_Venta.ToLower().Contains("membresia"))
                         {
-                            item.VentaId = ventaId;
 
-                            con.Execute(
-                                @"INSERT INTO DETALLE_VENTAS
-                                    (VentaId, ProductoId, Cantidad, PrecioUnitario)
-                                  VALUES
-                                    (@VentaId, @ProductoId, @Cantidad, @PrecioUnitario);",
-                                item, trx
-                            );
+                            foreach (var item in detalle)
+                            {
+                                item.Venta_Id = ventaId;
 
-                            // Descontar stock
-                            con.Execute(
-                                "UPDATE PRODUCTOS SET StockActual = StockActual - @Cantidad WHERE Id = @ProductoId",
-                                new { item.Cantidad, item.ProductoId }, trx
-                            );
+                                con.Execute(
+                                    @"INSERT INTO DETALLE_VENTAS
+                                        (Venta_Id, Producto_Id, Cantidad, Precio_Unitario)
+                                      VALUES
+                                        (@Venta_Id, @Producto_Id, @Cantidad, @Precio_Unitario);",
+                                    item, trx
+                                );
+
+                                // Descontar stock
+                                con.Execute(
+                                    "UPDATE PRODUCTOS SET Stock_Actual = Stock_Actual - @Cantidad WHERE Id = @Producto_Id",
+                                    new { item.Cantidad, item.Producto_Id }, trx
+                                );
+                            }
+                        }
+                        else
+                        {
+                            var result = _planMembresia.ObtenerPorId((int)venta.Plan_id);
+                            var fechaInicio = DateTime.Now;
+                            var fechaFin = fechaInicio.AddDays(result.Duracion_Dias); // o plan.Duracion_Dias
+
+                            Membresia membresia = new Membresia()
+                            {
+                                Venta_Id = ventaId,
+                                Cliente_Id = venta.Cliente_Id,
+                                Plan_Id = (int)venta.Plan_id,
+                                Fecha_Inicio = fechaInicio,
+                                Fecha_Fin = fechaFin,
+                                Precio_Pagado = venta.Total
+                            };
+                            _membresiaRepository.Insertar(membresia);
                         }
 
-                        trx.Commit();
+                            trx.Commit();
                         return ventaId;
                     }
                     catch
