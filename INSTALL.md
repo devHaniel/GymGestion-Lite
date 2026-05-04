@@ -2,45 +2,7 @@
 
 ---
 
-## 🚀 Instalación Rápida (Recomendado)
-
-### Requisitos Previos:
-- Windows 7 SP1 o superior
-- 500 MB de espacio en disco
-- Conexión a Internet (solo para descarga)
-
-### Pasos:
-
-1. **Descargar el instalador**
-   - Obtener `GymGestion-Lite-Setup.exe` del proveedor
-
-2. **Ejecutar como administrador**
-   ```
-   Click derecho → Ejecutar como administrador
-   ```
-
-3. **Seguir el asistente**
-   - Aceptar términos de licencia
-   - Seleccionar ruta de instalación (recomendado: `C:\Program Files\GymGestion-Lite\`)
-   - El instalador descargará e instalará automáticamente:
-     - .NET Framework 4.7.2
-     - SQL Server Express
-     - Base de datos inicial
-
-4. **Crear acceso directo**
-   - El instalador crea un acceso directo en el escritorio
-   - Hacer doble click para iniciar
-
-5. **Primer inicio**
-   - Usuario: `admin`
-   - Contraseña: `admin123`
-   - ⚠️ **Cambiar contraseña inmediatamente**
-
----
-
-## 🔧 Instalación Manual
-
-Si prefieres instalar manualmente o tienes problemas con el instalador automático.
+##  Instalación Manual
 
 ### Paso 1: Instalar .NET Framework 4.7.2
 
